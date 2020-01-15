@@ -8,43 +8,78 @@
         <!-- <v-btn class="mr-4" color="blue">Thêm mới</v-btn> -->
       </div>
     </div>
-    <v-container>
-      <v-btn class="mr-4" color="blue">Thêm mới</v-btn>
-      <v-data-table
-        :headers="headers"
-        :items="desserts"
-        :items-per-page="5"
-        :search="search"
-        no-data-text="Không có dữ liệu"
-        class="elevation-1"
-      >
+    <v-data-table
+      :headers="headers"
+      :items="desserts"
+      :items-per-page="5"
+      :search="search"
+      no-data-text="Không có dữ liệu"
+      class="elevation-1"
+    >
       <template v-slot:item.Id="{item}">
         <th :col="2">
           {{item.id}}
         </th>
       </template>
-      </v-data-table>
-    </v-container>
+      <template v-slot:item.action="{item}">
+        <v-icon
+          small
+          class="mr-2"
+          @click="editItem(item)"
+        >
+          edit
+        </v-icon>
+        <v-icon
+          small
+          @click="deleteItem(item)"
+        >
+          delete
+        </v-icon>
+      </template>
+    </v-data-table>
+    <!-- ssssssssssssssss -->
+    <v-dialog v-model="dialog" persistent max-width="290">
+      <v-card>
+        <v-card-title class="headline">Use Google's location service?</v-card-title>
+        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Agree</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 <script>
+  
+  import { getcategory } from '../../../api/GetApi/getApiAdmin'
   export default {
     data () {
       return {
         search: '',
-        desserts: [],
-      }
-    },
-    props: {
-      headers: {
-        require: true,
-        type: [Array, Object],
-        default: null
-      },
-      listApi: {
-        require: true,
-        type: Function,
-        default: null
+        headers: [
+          {
+            text: 'STT',
+            align: 'left',
+            sortable: false,
+            value: 'Id',
+          },
+          { text: 'Tên ngành nghề', value: 'name' },
+          { text: 'Mô tả', value: 'paradigm' },
+          { text: 'Actions', value: 'action', sortable: false },
+        ],
+        desserts: [
+          {
+            id: '1',
+            name: 'Điện tử'
+          }
+        ],
+        items: [
+          { text: 'Thêm mới', icon: 'mdi-clock' },
+          { text: 'Audience', icon: 'mdi-account' },
+          { text: 'Conversions', icon: 'mdi-flag' },
+        ],
       }
     },
     created () {
@@ -52,11 +87,14 @@
     },
     methods: {
       listCategory () {
-        this.listApi()
+        getcategory()
           .then(response => {
             console.log(response.data)
             this.desserts = response.data
           })
+      },
+      addItem () {
+
       }
     }
   }

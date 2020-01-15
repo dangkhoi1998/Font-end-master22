@@ -1,51 +1,48 @@
 <template>
-  <div>
-    <div>
-      <app-Nganhnghe
-      :headers="headers"
-      :list-api="getcategory">
-        <template v-slot:formNganhNghe="{ item }" >
-          <v-container>
-            <v-row>
-              <v-col cols="12" sm="12" class="py-0">
-                <v-text-field v-model="item._id" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" label="Số thứ tự" filled></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="12" class="py-0">
-                <v-text-field v-model="item.type_name"  label="Tên ngành nghề" filled></v-text-field>
-              </v-col>
-              <v-col cols="12"  sm="12" class="py-0">
-                <v-text-field v-model="item.ancestors" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" label="Mô tả" filled></v-text-field>
-              </v-col>
-            </v-row>
-          </v-container>
-        </template>
-      </app-Nganhnghe>
-    </div>
-  </div>
+  <v-container class="my-0 py-0">
+    <v-row>
+      <v-col cols="3" class="my-0 py-0 px-0 mx-0">
+        <v-card
+          class="mx-auto"
+          max-width="300"
+          tile
+        >
+          <v-list dense class="my-0 py-0">
+            <v-btn style="width: 100%" @click="addItem()">Thêm mới</v-btn>
+            <v-list-item-group v-model="item" color=" #e1e2e1">
+              <v-list-item
+                v-for="(item, i) in items"
+                :key="i"
+                @click="AddItem()"
+              >
+                <v-list-item-icon>
+                  <v-icon v-text="item.icon"></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title v-text="item.text"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-card>
+      </v-col>
+      <v-col cols="9" class="my-0 py-0 px-0 mx-0">
+        <router-view></router-view>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-  import NganhNghe from '../../../components/Admin/Table/NganhNghe'
-  import { getcategory } from '../../../api/GetApi/getApiAdmin'
   export default {
     data() {
       return {
-        getcategory,
-        headers: [
-          {
-            text: 'STT',
-            align: 'left',
-            sortable: false,
-            value: 'Id',
-          },
-          { text: 'Tên ngành nghề', value: 'name' },
-          { text: 'Mô tả', value: 'paradigm' },
-          { text: 'Actions', value: 'action', sortable: false },
+        items: [
+          { text: 'Thêm mới', icon: 'mdi-clock' },
+          { text: 'Audience', icon: 'mdi-account' },
+          { text: 'Conversions', icon: 'mdi-flag' },
         ],
       }
     },
-    components: {
-      appNganhnghe: NganhNghe
-    }
   }
 </script>

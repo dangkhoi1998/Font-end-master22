@@ -4,7 +4,7 @@ import DetailLogin from '../Login/Detail_Login'
 import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
-import detailNganhNge from '@/views/Admin/NganhNghe/DetailNganhNghe'
+import NghanhNghe from '../components/Admin/Table/NganhNghe'
 
 Vue.use(Router)
 
@@ -24,12 +24,16 @@ export default new Router({
       name: 'detailAdmin',
       component: detailAdmin,
       children: [
-        { path: 'nganh-nghe',
-          names: 'Bản tin', 
-          component: detailNganhNge,
+        { path: '/',
+          name: 'Ngành nghề', 
+          component: HomeNganhNghe,
           children: [
-            { path: '', name: 'Cơ hội', component: HomeNganhNghe },
-          ],
+            {
+              path: 'nganh-nghe',
+              name: 'Nghành nghề',
+              component: NghanhNghe,
+            }
+          ]
         },
       ]
     }      
