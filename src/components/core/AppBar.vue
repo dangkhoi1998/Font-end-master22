@@ -1,19 +1,12 @@
 <template>
-  <v-app-bar id="core-app-bar" absolute app color="#f5f5f5" height="120">
+  <v-app-bar id="core-app-bar" absolute app color="#f5f5f5" flat height="90">
     <!-- <v-toolbar-title class="tertiary--text font-weight-light align-self-center">
-      <v-btn icon @click.stop="onClick">
-        <v-icon size="30" color="tertiary">mdi-view-list</v-icon>
-      </v-btn>
-      <span class="mt-2">{{ title }}</span>
-    </v-toolbar-title >-->
-    <v-spacer />
-    <v-toolbar-title class="tertiary--text font-weight-light align-self-center">
+    </v-toolbar-title> -->
+    <!-- <v-spacer /> -->
+
       <slot name="formEmployees" :item="item"></slot>
-    </v-toolbar-title>
-    <!-- <v-toolbar-items>
-      <v-row align="center" class="mx-0" >
-        <v-menu bottom center offset-y transition="slide-y-transition" >
-          <template v-slot:activator="{ attrs, on }">
+    
+          <!-- <template v-slot:activator="{ attrs, on }">
             <v-btn class="toolbar-items " icon to="" v-bind="attrs"
               v-on="on"
             >
@@ -26,9 +19,9 @@
                 </v-icon>
               </v-badge>
             </v-btn>
-          </template>
+          </template> -->
          
-          <v-card>
+          <!-- <v-card>
             <v-list dense>
               <v-list-item v-for="(link, i) in links" :key="i"  style="text-decoration:none" @click="$store.state.authenticated = false" :to="link.to">
                 <v-list-item-action >
@@ -38,10 +31,7 @@
                 <v-list-item-title >{{link.text}}</v-list-item-title>
               </v-list-item>
             </v-list>
-          </v-card>
-        </v-menu>
-      </v-row>
-    </v-toolbar-items> -->
+          </v-card> -->
   </v-app-bar>
 </template>
 
@@ -52,11 +42,15 @@
       singleLine: true,
       notifications: [],
       title: null,
-      item: {},
       responsive: false,
+      item:{},
     }),
     
     props: {
+      getNotificationsApi: {
+        require: true,
+        type: Function
+      },
       links: {
         require: true,
         type: [ Object, Array ]
@@ -96,7 +90,18 @@
     beforeDestroy () {
       window.removeEventListener('resize', this.onResponsiveInverted)
     },
+    created () {
+      this.getNotifications()
+    },
     methods: {
+      getNotifications () {
+        this.getNotificationsApi()
+        .then(response => {
+          for (const i in response.data) {
+            this.notifications.push(response.data[i]['work_name'])
+          }
+        })
+      },
       ...mapMutations('app', ['setDrawer', 'toggleDrawer']),
       onClick () {
         this.setDrawer(!this.$store.state.app.drawer)

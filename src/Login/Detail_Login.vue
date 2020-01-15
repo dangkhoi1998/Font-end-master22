@@ -3,38 +3,8 @@
     <v-container>
       <app-menu>
         <template v-slot:formEmployees="{ item }" >
-          <v-card-actions class="my-0 py-0 mt-1">
-            <v-text-field
-              color="deep-purple"
-              v-model="item.user"
-              class="mr-3"
-              label="Tên đăng nhập"
-              prepend-inner-icon="mdi-account"
-              solo
-              rounded
-              dense
-              style="max-width:250px;height:30px"
-            ></v-text-field>
+          <app-login></app-login>
           
-            <v-text-field
-              solo
-              dense
-              v-model="item.pass"
-              prepend-inner-icon="mdi-lock"
-              rounded
-              style="max-width:250px; height:30px"
-              placeholder="Password"
-              color="deep-purple"
-              :type="show1 ? 'text' : 'password'"
-              label="Password"
-            ></v-text-field>
-          </v-card-actions>
-          
-          <v-card-actions class="my-0 py-0 mt-5">
-            <v-spacer />
-            <v-btn height="25" rounded :to="'/login/Dang-ky'"  style="text-decoration:none; color:#fff" color="#fdb44b">Đăng ký</v-btn>
-            <v-btn height="25" rounded class="ml-4 mr-1 " style="text-decoration:none; color:#fff" color="blue">Đăng nhập</v-btn>
-          </v-card-actions>
         </template>
       </app-menu>
       <v-row row style="margin-top:100px">
@@ -56,7 +26,8 @@
   </v-app>
 </template>
 <script>
-import appMenu from '../components/core/AppBar'
+import login from '../Login/login'
+import menu from '../components/core/AppBar'
   export default {
     data() {
       return {
@@ -70,11 +41,16 @@ import appMenu from '../components/core/AppBar'
       }
     },
     components:{
-      appMenu
+      appMenu: menu,
+      appLogin:login
     }
   }
 </script>
 <style>
+.input{
+  border: 1px solid black;
+  font-size: 13px;
+}
 .px-3 {
   margin: 26px !important;
   font-weight: 600 !important;
