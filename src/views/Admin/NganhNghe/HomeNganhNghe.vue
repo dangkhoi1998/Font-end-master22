@@ -2,7 +2,8 @@
   <div>
     <div>
       <app-Nganhnghe
-      :headers="headers">
+      :headers="headers"
+      :list-api="getcategory">
         <template v-slot:formNganhNghe="{ item }" >
           <v-container>
             <v-row>
@@ -25,9 +26,11 @@
 
 <script>
   import NganhNghe from '../../../components/Admin/Table/NganhNghe'
+  import { getcategory } from '../../../api/GetApi/getApiAdmin'
   export default {
     data() {
       return {
+        getcategory,
         headers: [
           {
             text: 'STT',
@@ -35,7 +38,7 @@
             sortable: false,
             value: 'Id',
           },
-          { text: 'Tên ngành nghề', value: 'type_name' },
+          { text: 'Tên ngành nghề', value: 'name' },
           { text: 'Mô tả', value: 'paradigm' },
           { text: 'Actions', value: 'action', sortable: false },
         ],
@@ -43,6 +46,6 @@
     },
     components: {
       appNganhnghe: NganhNghe
-    },
+    }
   }
 </script>
