@@ -1,35 +1,7 @@
 <template>
   <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#f5f5f5" flat height="90" >
-    
       <slot name="formEmployees" :item="item"></slot>
       <slot name="formNganhNghe" :item="itemss"></slot>
-    
-          <!-- <template v-slot:activator="{ attrs, on }">
-            <v-btn class="toolbar-items " icon to="" v-bind="attrs"
-              v-on="on"
-            >
-              <v-badge
-                color="error"
-                overlap
-              >
-                <v-icon color="tertiary">
-                  mdi-account
-                </v-icon>
-              </v-badge>
-            </v-btn>
-          </template> -->
-         
-          <!-- <v-card>
-            <v-list dense>
-              <v-list-item v-for="(link, i) in links" :key="i"  style="text-decoration:none" @click="$store.state.authenticated = false" :to="link.to">
-                <v-list-item-action >
-                  <v-icon>{{link.icon}}</v-icon>
-                </v-list-item-action>
-
-                <v-list-item-title >{{link.text}}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-          </v-card> -->
   </v-app-bar>
 </template>
 
@@ -112,7 +84,7 @@
 </script>
 
 <style>
-  /* Fix coming in v2.0.8 */
+  /* Fix coming in v2.0.8 1*/
   #core-app-bar {
     width: auto;
   }
