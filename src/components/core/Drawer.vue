@@ -67,7 +67,7 @@ export default {
     },
     links: {
       require: true,
-      type: [ Object, Array ]
+      type: [ Object]
     },
   },
   data: () => ({

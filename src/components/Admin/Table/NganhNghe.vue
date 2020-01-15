@@ -1,17 +1,29 @@
 <template>
   <div>
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
-      <div class="row-header">
-        <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH NGHỀ</span> </div>
+      <div class="row-header d-flex">
+        <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH NGHỀ</span></div>
+        <v-spacer></v-spacer>
+        <v-text-field class="py-0 my-0 mr-4" v-model="search" append-icon="search" label="Tìm kiếm" single-line hide-details></v-text-field>
+        <!-- <v-btn class="mr-4" color="blue">Thêm mới</v-btn> -->
       </div>
     </div>
     <v-container>
+      <v-btn class="mr-4" color="blue">Thêm mới</v-btn>
       <v-data-table
         :headers="headers"
         :items="desserts"
         :items-per-page="5"
+        :search="search"
+        no-data-text="Không có dữ liệu"
         class="elevation-1"
-      ></v-data-table>
+      >
+      <template v-slot:item.Id="{item}">
+        <th :col="2">
+          {{item.id}}
+        </th>
+      </template>
+      </v-data-table>
     </v-container>
   </div>
 </template>
@@ -19,16 +31,34 @@
   export default {
     data () {
       return {
+        search: '',
         desserts: [],
       }
     },
     props: {
       headers: {
         require: true,
-        type: Array,
+        type: [Array, Object],
+        default: null
+      },
+      listApi: {
+        require: true,
+        type: Function,
         default: null
       }
     },
+    created () {
+      this.listCategory()
+    },
+    methods: {
+      listCategory () {
+        this.listApi()
+          .then(response => {
+            console.log(response.data)
+            this.desserts = response.data
+          })
+      }
+    }
   }
 </script>
 
