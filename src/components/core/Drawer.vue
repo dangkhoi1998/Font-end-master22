@@ -18,7 +18,7 @@
 
     <v-list-item two-line>
         <v-img src="@/assets/logos.png" height="100" contain />
-      <v-list-item-title class="title">Media Soft</v-list-item-title>
+      <v-list-item-title class="title">1Media Soft</v-list-item-title>
     </v-list-item>
 
     <v-divider class="mx-3 mb-3" />

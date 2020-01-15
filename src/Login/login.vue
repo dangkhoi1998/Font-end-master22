@@ -6,6 +6,17 @@
           </v-list-item>
           
         </v-col>
+        <!-- <v-col cols="12" sm="10">
+            <v-card-actions>
+                <v-spacer></v-spacer>
+                <div class="ico ico-user ico1">
+                    <input class="mt-3 mr-3 input1" placeholder="Tên đăng nhập"/>
+                </div>
+                <div class="ico ico-user1 ico2">
+                    <input class="mt-3 input1" placeholder="Password"/>
+                </div>
+            </v-card-actions>
+        </v-col> -->
         <v-col cols="12" sm="6"></v-col>
         <v-col cols="12" sm="2" class="button-1">
             <div class="ico ico-user ico1">
@@ -18,9 +29,11 @@
             </div>
         </v-col>
         <template>
-            <v-spacer></v-spacer>
-            <v-btn height="20" class="submit-button1" rounded :to="'/login/Dang-ky'"  style="text-decoration:none; color:#fff" color="#fdb44b"><span style="font-size:11px">Đăng ký</span></v-btn>
-            <v-btn height="20"  rounded class="submit-button"  style="text-decoration:none; color:#fff" color="blue"><span style="font-size:11px">Đăng nhập</span></v-btn>
+            <!-- <v-card-actions> -->
+                <v-spacer></v-spacer>
+                <v-btn height="20" class="submit-button1" rounded :to="'/login/Dang-ky'"  style="text-decoration:none; color:#fff" color="#fdb44b"><span style="font-size:11px">Đăng ký</span></v-btn>
+                <v-btn height="20"  rounded class="submit-button"  style="text-decoration:none; color:#fff" color="blue"><span style="font-size:11px">Đăng nhập</span></v-btn>
+            <!-- </v-card-actions> -->
         </template>
     </v-row>
 </template>
@@ -39,7 +52,7 @@
     .logo1{ margin-top: 110px}
     .button-1{ margin-top: -38px}
 }
-@media(min-width: 905px){
+@media(min-width: 1100px){
     .ico1{
         font-size: 12px;
         margin-left: 155px

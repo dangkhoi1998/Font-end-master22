@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar id="core-app-bar" absolute app color="#f5f5f5" flat height="90">
+  <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" absolute app color="#f5f5f5" flat height="90" >
     <!-- <v-toolbar-title class="tertiary--text font-weight-light align-self-center">
     </v-toolbar-title> -->
     <!-- <v-spacer /> -->
