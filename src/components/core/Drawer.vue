@@ -1,7 +1,8 @@
 <template>
   <v-navigation-drawer
     id="app-drawer"
-    v-model="inputValue"
+    v-model="drawer"
+    :clipped="$vuetify.breakpoint.lgAndUp"
     :src="image"
     app
     color="grey darken-2"

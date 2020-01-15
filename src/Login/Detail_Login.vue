@@ -8,7 +8,7 @@
         </template>
       </app-menu>
       <v-row row style="margin-top:100px">
-        <v-col cols="12" sm="7" color="white" class="my-auto">
+        <v-col cols="12" sm="7" color="white ss" class="my-auto">
           <v-list-item class="img1" style="margin-top:100px">
             <v-img class="ml-5" src="@/assets/dropship.png" contain />
           </v-list-item>
