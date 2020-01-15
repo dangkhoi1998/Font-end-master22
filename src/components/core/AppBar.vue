@@ -1,11 +1,11 @@
 <template>
-  <v-app-bar id="core-app-bar" absolute app color="#f5f5f5" height="120">
+  <v-app-bar id="core-app-bar" absolute app color="#f5f5f5">
     <!-- <v-toolbar-title class="tertiary--text font-weight-light align-self-center">
       <v-btn icon @click.stop="onClick">
         <v-icon size="30" color="tertiary">mdi-view-list</v-icon>
       </v-btn>
       <span class="mt-2">{{ title }}</span>
-    </v-toolbar-title >-->
+    </v-toolbar-title > -->
     <v-spacer />
     <v-toolbar-title class="tertiary--text font-weight-light align-self-center">
       <slot name="formEmployees" :item="item"></slot>
