@@ -13,7 +13,7 @@
               <v-list-item
                 v-for="(item, i) in items"
                 :key="i"
-                @click="AddItem()"
+                :to="item.to"
               >
                 <v-list-item-icon>
                   <v-icon v-text="item.icon"></v-icon>
@@ -38,9 +38,9 @@
     data() {
       return {
         items: [
-          { text: 'Thêm mới', icon: 'mdi-clock' },
-          { text: 'Audience', icon: 'mdi-account' },
-          { text: 'Conversions', icon: 'mdi-flag' },
+          { text: 'Thêm mới', icon: 'mdi-clock', to: '/admin/nganh-nghe' },
+          { text: 'Audience', icon: 'mdi-account', to: '/admin/nganh-nghe' },
+          { text: 'Conversions', icon: 'mdi-flag', to: '/admin/nganh-nghe' },
         ],
       }
     },
