@@ -1,0 +1,781 @@
+{
+  "getApi": [
+    {
+      "idEmpl": 1,
+      "nameEmpl": "c",
+      "phoneNum": 16555555,
+      "levell": "1",
+      "email": "dev@gmail.com",
+      "stt": false,
+      "addresss": "13/11 ABC",
+      "dateOfBirth": "5/7/1998",
+      "userr": "cccc",
+      "pass": "789",
+      "idDepartment": [
+        {
+          "department_name": "Phòng Nhân Sự",
+          "id_department": "PNS",
+          "id": 1
+        },
+        {
+          "department_name": "Phòng Kinh Doanh",
+          "id_department": "PKD",
+          "id": 2
+        },
+        {
+          "department_name": "Phòng giải pháp",
+          "id_department": "PGP",
+          "id": 3
+        },
+        {
+          "department_name": "Phòng Hành Chính",
+          "id_department": "PHC",
+          "id": 4
+        },
+        {
+          "department_name": "Phòng Kế Toán",
+          "id_department": "PKT",
+          "id": 5
+        }
+      ],
+      "series": [
+        20,
+        17,
+        7,
+        17,
+        23,
+        18,
+        38
+      ],
+      "work": [
+        {
+          "work_name": "Cấp giấy phép kinh doanh",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Mr.Khởi",
+            "MR.Nam"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Điền đầy đủ thông tin",
+          "date": "2018-11-19",
+          "id": 1
+        },
+        {
+          "work_name": "Ngày mai toàn bộ cty được nghỉ làm ",
+          "id_department": [
+            "Phòng Kinh Doanh"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Được nghỉ 2 ngày",
+          "date": "2019-1-02",
+          "id": 2
+        },
+        {
+          "work_name": "Mai sếp đi tán gái ",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo",
+            "MR.Nam"
+          ],
+          "prioritize": "Khẩn cấp",
+          "noidung": "Ae cùng được nghỉ",
+          "date": "2019-11-22",
+          "id": 3
+        }
+      ],
+      "workToDo": [
+        {
+          "commets": "Cấp lại gấy chứng nhận cho  chú",
+          "dateTime": "2019-11-20",
+          "id": 1
+        },
+        {
+          "commets": "Cung cap thong tin cho bo giao thong van tai",
+          "dateTime": "2019-11-20",
+          "id": 2
+        },
+        {
+          "commets": "Cấp lại giấy chứng nhận cho chú an ",
+          "dateTime": "2019-11-20",
+          "id": 3
+        }
+      ],
+      "doanhthunhanvien": [
+        {
+          "id": 1,
+          "name_empl": "Nguyễn Tiến Nghĩa",
+          "doanhthu": "5.000.000"
+        },
+        {
+          "id": 1,
+          "name_empl": "Khởi đầu to",
+          "doanhthu": "1.000.000"
+        },
+        {
+          "id": 1,
+          "name_empl": "Đỗ Quốc Huy",
+          "doanhthu": "350.000.000"
+        }
+      ],
+      "employee": [
+        {
+          "name_empl": "Doanh nhân hảo",
+          "email": "ad@gmail.com",
+          "phone_num": "1922222",
+          "addresss": "Hát Môn - Phúc Thọ - Hà Nội",
+          "date_of_birth": "20/11/2019",
+          "level": "Nhân viên",
+          "id_department": "Phòng Kinh Doanh",
+          "pass": "12345678",
+          "comment_empl": [
+            {
+              "id_comemp": 1,
+              "note": "Chú ý làm việc cho tốt",
+              "id_empl": 1,
+              "appointment_time": "09h:00",
+              "contact_time": "00h:20p:00",
+              "icon": ""
+            }
+          ],
+          "stt": "Đang hoạt động",
+          "id": 2
+        },
+        {
+          "name_empl": "Mr.Khởi",
+          "email": "khoi@gmail.com",
+          "phone_num": "09876543",
+          "addresss": "Phú thọ - ",
+          "date_of_birth": "14/11/2019",
+          "level": "Trưởng phòng",
+          "id_department": "Phòng Nhân Sự",
+          "comment_empl": [
+            {
+              "id_comemp": 1,
+              "note": "Chú ý làm việc cho tốt",
+              "id_empl": 1,
+              "appointment_time": "09:00",
+              "contact_time": "03p 20min",
+              "datee": "20/11/2019",
+              "icon": []
+            }
+          ],
+          "pass": "09876543",
+          "stt": "Đang hoạt động",
+          "id": 3
+        }
+      ],
+      "Omninchannel": [
+        {
+          "name_cus": "Nguyễn Minh Tú",
+          "phone_num": "098765432",
+          "email": "dangkhoi@gmail.com",
+          "user": "hoangduong",
+          "pass": "12345@@",
+          "stt": "Chờ kích hoạt",
+          "id": 1,
+          "comment": [
+            {
+              "id_com": 1,
+              "note": "Tinh thần làm việc giữ vững không được giảm sút",
+              "id_opportunity": 1,
+              "appointment_time": "08:00",
+              "contact_time": "1h 00min",
+              "datee": "20/11/2019",
+              "icon": ""
+            }
+          ]
+        },
+        {
+          "name_cus": "Hoàng Văn Hảo ",
+          "phone_num": "098765432",
+          "email": "khoi@gmail.com",
+          "user": "Mr.Nam",
+          "pass": "998765@",
+          "comment": [
+            {
+              "id_com": 1,
+              "note": "Tinh thần làm việc giữ vững không được giảm sút",
+              "id_opportunity": 1,
+              "appointment_time": "08:00",
+              "contact_time": "1h 00min",
+              "datee": "20/11/2019",
+              "icon": ""
+            }
+          ],
+          "stt": "Chờ kích hoạt",
+          "id": 2
+        },
+        {
+          "name_cus": "Trần Đăng Nam",
+          "phone_num": "09876543",
+          "email": "hao@gmail.com",
+          "user": "Ruby",
+          "pass": "123456",
+          "comment": [
+            {
+              "id_com": 1,
+              "note": "Tinh thần làm việc giữ vững không được giảm sút",
+              "id_opportunity": 1,
+              "appointment_time": "08:00",
+              "contact_time": "1h 00min",
+              "datee": "20/11/2019",
+              "icon": ""
+            }
+          ],
+          "stt": "Tạm ngừng hoạt động",
+          "id": 3
+        }
+      ],
+      "Opportunity": [
+        {
+          "cus_Name": "Hoàng Kiến Huy",
+          "phone_Num": "096846792",
+          "pro_Name": "Quần Ao kho",
+          "email": "hoi@gmail.com",
+          "amountt": "15",
+          "price": "20.0000",
+          "date_of_purchase": "11/11/2019",
+          "id_empl": "Hoang gia huy",
+          "delivery": "Giao hàng tiết kiệm",
+          "source": "Shopee",
+          "comment": [
+            {
+              "id_com": 1,
+              "note": "Tinh thần làm việc giữ vững không được giảm sút",
+              "id_opportunity": 1,
+              "appointment_time": "08:00",
+              "contact_time": "1h 00min",
+              "datee": "20/11/2019",
+              "icon": ""
+            }
+          ],
+          "stt": "Đã đăng ký",
+          "id": 1
+        }
+      ]
+    },
+    {
+      "idEmpl": 2,
+      "nameEmpl": "cd",
+      "phoneNum": 16555555,
+      "levell": "2",
+      "email": "dev@gmail.com",
+      "stt": false,
+      "addresss": "13/11 ABC",
+      "dateOfBirth": "5/7/1998",
+      "userr": "cccc",
+      "pass": "789",
+      "work": [
+        {
+          "work_name": "Cấp giấy phép kinh doanh",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Mr.Khởi",
+            "MR.Nam"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Điền đầy đủ thông tin",
+          "date": "2018-11-19",
+          "id": 1
+        },
+        {
+          "work_name": "Ngày mai toàn bộ cty được nghỉ làm ",
+          "id_department": [
+            "Phòng Kinh Doanh"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Được nghỉ 2 ngày",
+          "date": "2019-1-02",
+          "id": 2
+        },
+        {
+          "work_name": "Mai sếp đi tán gái ",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo",
+            "MR.Nam"
+          ],
+          "prioritize": "Khẩn cấp",
+          "noidung": "Ae cùng được nghỉ",
+          "date": "2019-11-22",
+          "id": 3
+        },
+        {
+          "work_name": "Cung cấp đầy đủ thông tin cho a",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng Kinh Doanh"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Bé Ngân Khánh ríu rít ôm chầm bố cùng món quà nhỏ khi hội ngộ tối 21/11. Chú thú bông nhiều màu sắc được thượng úy, bác sĩ Nguyễn Quang Tường mua khi quá cảnh tại đảo Seychelles, châu Phi trên hành trình từ Nam Sudan về Việt Nam sau một năm làm nhiệm vụ quốc tế. ",
+          "date": "2019-11-23",
+          "id": 4
+        }
+      ],
+      "doanhthunhanvien": [
+        {
+          "id": 1,
+          "name_empl": "Nguyễn Tiến Nghĩa",
+          "doanhthu": "5.000.000"
+        },
+        {
+          "id": 1,
+          "name_empl": "Khởi đầu to",
+          "doanhthu": "1.000.000"
+        },
+        {
+          "id": 1,
+          "name_empl": "Đỗ Quốc Huy",
+          "doanhthu": "350.000.000"
+        }
+      ],
+      "workToDo": [
+        {
+          "commets": "Cấp lại gấy chứng nhận cho  chú",
+          "dateTime": "2019-11-20",
+          "id": 1
+        },
+        {
+          "commets": "Cung cap thong tin cho bo giao thong van tai",
+          "dateTime": "2019-11-20",
+          "id": 2
+        },
+        {
+          "commets": "Cấp lại giấy chứng nhận cho chú an ",
+          "dateTime": "2019-11-20",
+          "id": 3
+        }
+      ]
+    },
+    {
+      "idEmpl": 3,
+      "nameEmpl": "dx",
+      "phoneNum": 112255,
+      "levell": "3",
+      "email": "dev@gmail.com",
+      "stt": false,
+      "addresss": "13/11 ABC",
+      "dateOfBirth": "5/7/1998",
+      "userr": "cccc",
+      "pass": "789",
+      "work": [
+        {
+          "work_name": "Nghĩa đi tiếp khách IT",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Mr.Nghĩa",
+            "MR.Khởi"
+          ],
+          "prioritize": "Khẩn cấp",
+          "noidung": "Điền đầy đủ thông tin",
+          "date": "2018-11-19",
+          "id": 1
+        },
+        {
+          "work_name": "Ngày mai toàn bộ cty đi du lich",
+          "id_department": [
+            "Phòng Kinh Doanh"
+          ],
+          "id_empl": [
+            "Doanh nhân Nghĩa"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Được nghỉ 3 ngày",
+          "date": "2019-1-02",
+          "id": 2
+        },
+        {
+          "work_name": "Mai sếp đi tán gái ",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng giải pháp"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo",
+            "MR.Nam"
+          ],
+          "prioritize": "Khẩn cấp",
+          "noidung": "Ae cùng được nghỉ",
+          "date": "2019-11-22",
+          "id": 3
+        },
+        {
+          "work_name": "Cung cấp đầy đủ thông tin cho a",
+          "id_department": [
+            "Phòng Nhân Sự",
+            "Phòng Kinh Doanh"
+          ],
+          "id_empl": [
+            "Doanh nhân hảo"
+          ],
+          "prioritize": "Trung bình",
+          "noidung": "Bé Ngân Khánh ríu rít ôm chầm bố cùng món quà nhỏ khi hội ngộ tối 21/11. Chú thú bông nhiều màu sắc được thượng úy, bác sĩ Nguyễn Quang Tường mua khi quá cảnh tại đảo Seychelles, châu Phi trên hành trình từ Nam Sudan về Việt Nam sau một năm làm nhiệm vụ quốc tế. ",
+          "date": "2019-11-23",
+          "id": 4
+        }
+      ],
+      "workToDo": [
+        {
+          "commets": "Cấp lại vân tay chấm công",
+          "dateTime": "2019-11-20",
+          "id": 1
+        },
+        {
+          "commets": "Nộp dealine cho cho trưởng nhóm trong ngày",
+          "dateTime": "2019-11-20",
+          "id": 2
+        },
+        {
+          "commets": "Nộp báo cáo khảo sát khách hàng",
+          "dateTime": "2019-11-20",
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "workToDo": [
+    {
+      "commets": "Cấp lại gấy chứng nhận cho  chú",
+      "dateTime": "2019-11-20",
+      "id": 1
+    },
+    {
+      "commets": "Cung cap thong tin cho bo giao thong van tai",
+      "dateTime": "2019-11-20",
+      "id": 2
+    },
+    {
+      "commets": "Cấp lại giấy chứng nhận cho chú an ",
+      "dateTime": "2019-11-20",
+      "id": 3
+    }
+  ],
+  "Omninchannel": [
+    {
+      "name_cus": "Nguyễn Minh Tú",
+      "phone_num": "098765432",
+      "email": "dangkhoi@gmail.com",
+      "user": "hoangduong",
+      "pass": "12345@@",
+      "stt": "Chờ kích hoạt",
+      "id": 1
+    },
+    {
+      "name_cus": "Hoàng Văn Hảo ",
+      "phone_num": "098765432",
+      "email": "khoi@gmail.com",
+      "user": "Mr.Nam",
+      "pass": "998765@",
+      "stt": "Chờ kích hoạt",
+      "id": 2
+    },
+    {
+      "name_cus": "Trần Đăng Nam",
+      "phone_num": "09876543",
+      "email": "hao@gmail.com",
+      "user": "Ruby",
+      "pass": "123456",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 3
+    },
+    {
+      "name_cus": "Nguyễn Thị Minh Phượng",
+      "email": "0968462802",
+      "phone_num": "dangkhoi@gmail.com",
+      "user": "098765432",
+      "pass": "12345678@",
+      "stt": "Đang hoạt động",
+      "id": 4
+    },
+    {
+      "name_cus": "Nguyễn Đăng Khởi",
+      "email": "095678934",
+      "phone_num": "nguyendangkhoi@gmail.com",
+      "user": "Mr.Nam",
+      "pass": "12345@",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 5
+    },
+    {
+      "name_cus": "Kim Hùng",
+      "email": "098765443",
+      "phone_num": "1@gmail.com",
+      "user": "ịhgfdgh",
+      "pass": "1111",
+      "stt": "Chờ kích hoạt",
+      "id": 6
+    },
+    {
+      "name_cus": "Văn Nam",
+      "email": "098765432",
+      "phone_num": "dddd@gmail.com",
+      "user": "sssss",
+      "pass": "ssss",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 7
+    },
+    {
+      "name_cus": "Gia thanh",
+      "email": "09876543",
+      "phone_num": "sssss@gmail.com",
+      "user": "MINH THANH",
+      "pass": "ddd",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 8
+    },
+    {
+      "name_cus": "sssssssss",
+      "phone_num": "098765432",
+      "email": "sssssssss@gmail.com",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 9
+    },
+    {
+      "name_cus": "09876543",
+      "phone_num": "098765432",
+      "email": "0987654@gmail.cccc",
+      "stt": "Chờ kích hoạt",
+      "id": 10
+    },
+    {
+      "email": "mnbcvx@gmail.com",
+      "id": 11
+    },
+    {
+      "email": "wer@gmail.com",
+      "id": 12
+    }
+  ],
+  "revenue": [
+    {
+      "id": 1,
+      "name_empl": "Nguyễn Đăng Khởi ",
+      "doanhthu": "20.000.000"
+    },
+    {
+      "id": 2,
+      "name_empl": "Hoàng Văn Hảo ",
+      "doanhthu": "200.000.000"
+    },
+    {
+      "id": 3,
+      "name_empl": "Đỗ Quốc Huy",
+      "doanhthu": "350.000.000"
+    }
+  ],
+  "department": [
+    {
+      "department_name": "Phòng Nhân Sự",
+      "id_department": "PNS",
+      "id": 1
+    },
+    {
+      "department_name": "Phòng Kinh Doanh",
+      "id_department": "PKD",
+      "id": 2
+    },
+    {
+      "department_name": "Phòng giải pháp",
+      "id_department": "PGP",
+      "id": 3
+    },
+    {
+      "department_name": "Phòng Hành Chính",
+      "id_department": "PHC",
+      "id": 4
+    },
+    {
+      "department_name": "Phòng Kế Toán",
+      "id_department": "PKT",
+      "id": 5
+    }
+  ],
+  "work": [
+    {
+      "work_name": "Cấp giấy phép kinh doanh",
+      "id_department": [
+        "Phòng Nhân Sự",
+        "Phòng giải pháp"
+      ],
+      "id_empl": [
+        "Mr.Khởi",
+        "MR.Nam"
+      ],
+      "prioritize": "Trung bình",
+      "noidung": "Điền đầy đủ thông tin",
+      "date": "2018-11-19",
+      "id": 1
+    },
+    {
+      "work_name": "Ngày mai toàn bộ cty được nghỉ làm ",
+      "id_department": [
+        "Phòng Kinh Doanh"
+      ],
+      "id_empl": [
+        "Doanh nhân hảo"
+      ],
+      "prioritize": "Trung bình",
+      "noidung": "Được nghỉ 2 ngày",
+      "date": "2019-1-02",
+      "id": 2
+    },
+    {
+      "work_name": "Mai sếp đi tán gái ",
+      "id_department": [
+        "Phòng Nhân Sự",
+        "Phòng giải pháp"
+      ],
+      "id_empl": [
+        "Doanh nhân hảo",
+        "MR.Nam"
+      ],
+      "prioritize": "Khẩn cấp",
+      "noidung": "Ae cùng được nghỉ",
+      "date": "2019-11-22",
+      "id": 3
+    },
+    {
+      "work_name": "Cung cấp đầy đủ thông tin cho a",
+      "id_department": [
+        "Phòng Nhân Sự",
+        "Phòng Kinh Doanh"
+      ],
+      "id_empl": [
+        "Doanh nhân hảo"
+      ],
+      "prioritize": "Trung bình",
+      "noidung": "Bé Ngân Khánh ríu rít ôm chầm bố cùng món quà nhỏ khi hội ngộ tối 21/11. Chú thú bông nhiều màu sắc được thượng úy, bác sĩ Nguyễn Quang Tường mua khi quá cảnh tại đảo Seychelles, châu Phi trên hành trình từ Nam Sudan về Việt Nam sau một năm làm nhiệm vụ quốc tế. ",
+      "date": "2019-11-23",
+      "id": 4
+    }
+  ],
+  "Opportunity": [
+  ],
+  "employee": [
+    {
+      "name_empl": "Doanh nhân hảo",
+      "email": "ad@gmail.com",
+      "phone_num": "1922222",
+      "addresss": "Hát Môn - Phúc Thọ - Hà Nội",
+      "date_of_birth": "26/11/2019",
+      "level": "Nhân viên",
+      "id_department": "Phòng Kinh Doanh",
+      "pass": "12345678",
+      "stt": "Tạm ngừng hoạt động",
+      "comments": [
+      ],
+      "id": 2
+    },
+    {
+      "name_empl": "Mr.Khởi",
+      "email": "khoi@gmail.com",
+      "phone_num": "09876543",
+      "addresss": "Phú thọ - ",
+      "date_of_birth": "14/11/2019",
+      "level": "Trưởng phòng",
+      "id_department": "Phòng Nhân Sự",
+      "pass": "09876543",
+      "stt": "Đang hoạt động",
+      "id": 3
+    },
+    {
+      "name_empl": "MR.Nam",
+      "email": "765@gmail.com",
+      "phone_num": "09876",
+      "addresss": "9876",
+      "date_of_birth": "21/11/2019",
+      "level": "Trưởng phòng",
+      "id_department": "Phòng giải pháp",
+      "pass": "09876543",
+      "stt": "Đang hoạt động",
+      "id": 4
+    },
+    {
+      "name_empl": "Mr.Thanh",
+      "email": "thanh@gmail.com",
+      "phone_num": "00987654",
+      "addresss": "Đà Lạc",
+      "date_of_birth": "18/11/2019",
+      "level": "Trưởng phòng",
+      "id_department": "Phòng Nhân Sự",
+      "pass": "0987654",
+      "stt": "Ngừng hoạt động",
+      "id": 5
+    },
+    {
+      "name_empl": "Mr.Thanh",
+      "email": "00987654@gmail.com",
+      "phone_num": "0987654",
+      "addresss": "0987654",
+      "date_of_birth": "21/11/2019",
+      "level": "Trưởng phòng",
+      "id_department": "Phòng Kinh Doanh",
+      "pass": "0987654",
+      "stt": "Đang hoạt động",
+      "id": 6
+    },
+    {
+      "name_empl": "Hoàng gia huy",
+      "email": "aaaa@gmail.com",
+      "phone_num": "0987654",
+      "addresss": "00987654",
+      "date_of_birth": "21/11/2019",
+      "level": "Nhân viên",
+      "id_department": "Phòng Nhân Sự",
+      "pass": "098765",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 7
+    },
+    {
+      "name_empl": "adasdasd",
+      "email": "sdas@gmail.com",
+      "phone_num": "ádasd",
+      "addresss": "sadsadsad",
+      "date_of_birth": "25/11/2019",
+      "pass": "0987654",
+      "stt": "Đang hoạt động",
+      "id": 8
+    },
+    {
+      "name_empl": "test",
+      "email": "sdasd@gmail.com",
+      "phone_num": "09876543",
+      "addresss": "kjhgfds",
+      "date_of_birth": "25/11/2019",
+      "pass": "87654",
+      "stt": "Đang hoạt động",
+      "id": 9
+    },
+    {
+      "date_of_birth": "13/11/2019",
+      "level": "Trưởng phòng",
+      "id_department": "Phòng Nhân Sự",
+      "stt": "Tạm ngừng hoạt động",
+      "id": 10
+    }
+  ]
+}
