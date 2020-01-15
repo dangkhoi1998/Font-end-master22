@@ -6,35 +6,20 @@
           </v-list-item>
           
         </v-col>
-        <!-- <v-col cols="12" sm="10">
+        <v-col cols="12" sm="6"></v-col>
+        <v-col cols="12" sm="2">
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <div class="ico ico-user ico1">
                     <input class="mt-3 mr-3 input1" placeholder="Tên đăng nhập"/>
+                    <v-btn height="20" class="submit-button2" rounded :to="'/login/Dang-ky'"  style="text-decoration:none; color:#fff" color="#fdb44b"><span style="font-size:11px">Đăng ký</span></v-btn>
                 </div>
                 <div class="ico ico-user1 ico2">
                     <input class="mt-3 input1" placeholder="Password"/>
+                    <v-btn height="20"  rounded class="submit-button1"  style="text-decoration:none; color:#fff" color="blue"><span style="font-size:11px">Đăng nhập</span></v-btn>
                 </div>
             </v-card-actions>
-        </v-col> -->
-        <v-col cols="12" sm="6"></v-col>
-        <v-col cols="12" sm="2" class="button-1">
-            <div class="ico ico-user ico1">
-                <input class="mt-3 input1" placeholder="Tên đăng nhập"/>
-            </div>
         </v-col>
-        <v-col cols="12" sm="2" class="button-2">
-            <div class="ico ico-user1 ico2">
-                <input class="mt-3 input1" placeholder="Password"/>
-            </div>
-        </v-col>
-        <template>
-            <!-- <v-card-actions> -->
-                <v-spacer></v-spacer>
-                <v-btn height="20" class="submit-button1" rounded :to="'/login/Dang-ky'"  style="text-decoration:none; color:#fff" color="#fdb44b"><span style="font-size:11px">Đăng ký</span></v-btn>
-                <v-btn height="20"  rounded class="submit-button"  style="text-decoration:none; color:#fff" color="blue"><span style="font-size:11px">Đăng nhập</span></v-btn>
-            <!-- </v-card-actions> -->
-        </template>
     </v-row>
 </template>
 <style scoped>
@@ -55,18 +40,18 @@
 @media(min-width: 1100px){
     .ico1{
         font-size: 12px;
-        margin-left: 155px
+        margin-left: 155px;
+        margin-top:-30px
     }
-    .submit-button1{
-        font-size: 12px;
-        position: absolute;
-        margin-top: 60px;
-        margin-left: 1745px
+     .submit-button1{
+         margin-top: 10px;
+         position: relative;
+         margin-left: 80px
     }
-    .submit-button{
-        position: absolute;
-        margin-top: 60px;
-        margin-left: 1840px
+     .submit-button2{
+         margin-top: 48px;
+         position: absolute;
+         margin-left: -15px
     }
     .ico2{
         font-size: 12px;
@@ -94,24 +79,6 @@
         display: flex;
         align-items: center;
         justify-content: center
-    }
-    .ico1::after{
-        content: "";
-        position: absolute;
-        top: 28%;
-        left: 194px;
-        width: 1px;
-        height: 16%;
-        background-color: #005792;
-    }
-    .ico2::after{
-        content: "";
-        position: absolute;
-        top: 28%;
-        left: 38px;
-        width: 2px;
-        height: 16%;
-        background-color: #005792;
     }
 }
 

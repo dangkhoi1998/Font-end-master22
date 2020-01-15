@@ -5,23 +5,13 @@
     :clipped="$vuetify.breakpoint.lgAndUp"
     :src="image"
     app
-    color="grey darken-2"
+    color="#d7d7d7"
     dark
     floating
     mobile-break-point="991"
     persistent
     width="260"
   >
-    <template v-slot:img="attrs">
-      <v-img v-bind="attrs" gradient="to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)" />
-    </template>
-
-    <v-list-item two-line>
-        <v-img src="@/assets/logos.png" height="100" contain />
-      <v-list-item-title class="title">1Media Soft</v-list-item-title>
-    </v-list-item>
-
-    <v-divider class="mx-3 mb-3" />
 
     <v-list>
       
@@ -29,13 +19,13 @@
         <v-list-group
           v-if="item.items"
           active-class="primary white--text"
-          style="text-decoration:none"
+          style="text-decoration:none;"
           no-action
           :prepend-icon="item.action"
           :key="item"
           >
           <template v-slot:activator >
-              <v-list-item-icon :to="item.to">
+              <v-list-item-icon :to="item.to" >
                 <v-icon>{{item.icon}}</v-icon>
               </v-list-item-icon>
               <v-list-item-title>{{item.text}}</v-list-item-title>
@@ -43,7 +33,7 @@
 
             <v-list-item
               v-for=" subitem in item.items"
-              style="text-decoration:none"
+              style="text-decoration:none;"
               :to="subitem.to"
               :key="subitem"> 
               <v-list-item-title>{{subitem.title}}</v-list-item-title>
@@ -54,7 +44,7 @@
           v-else
           :to="item.to"
           active-class="primary white--text"
-          style="text-decoration:none"
+          style="text-decoration:none;margin-top:-8px"
           :key="item">
           <v-list-item-icon>
             <v-icon>{{item.icon}}</v-icon>
@@ -83,7 +73,7 @@ export default {
   data: () => ({
   }),
   computed: {
-    ...mapState("app", ["image", "color"]),
+    ...mapState("app", [ "color"]),
     inputValue: {
       get() {
         return this.$store.state.app.drawer;
