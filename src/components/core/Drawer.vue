@@ -6,9 +6,9 @@
           <v-col cols="12" sm="2" class="">
             <v-list-item 
             :to="item.to"
-            active-class="cyan white--text"
+            active-class="blue white--text"
             style="text-decoration:none">
-            <v-list-item-title style="color:#ffff;">{{item.text}}</v-list-item-title>
+            <v-list-item-title style="color:#ffff; font-size:18px">{{item.text}}</v-list-item-title>
           </v-list-item>
           </v-col>
         </template>
