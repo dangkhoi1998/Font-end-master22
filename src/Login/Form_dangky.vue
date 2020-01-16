@@ -22,7 +22,7 @@
               <v-text-field v-model="user.middle_name" color="deep-purple" label="Đệm" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-combobox v-model="user.sex" :items="sex" label="Giới tính" required outlined dense></v-combobox>
+              <v-combobox v-model="user.sex" :items="sex" label="Giới tính" required outlined dense></v-combobox> 
             </v-col>
             <v-col class="my-0 py-0" cols="12">
               <v-text-field v-model="user.email" color="deep-purple" label="Email" required outlined dense></v-text-field>
@@ -37,7 +37,7 @@
               <v-combobox v-model="user.country" label="Quốc gia" :items="cacnuoc" required outlined dense></v-combobox>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
-              <v-text-field v-model="user.phone" color="deep-purple" label="Số điện thoại" required outlined dense ></v-text-field>
+              <v-text-field v-model="user.phone" :rules="phone" color="deep-purple" label="Số điện thoại" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
               <v-text-field v-model="user.user" color="deep-purple" label="Tên đăng nhập" required outlined dense ></v-text-field>
@@ -54,7 +54,7 @@
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="ml-4" style="text-decoration:none; color:#fff" color="blue">Đăng ký</v-btn>
+            <v-btn class="ml-4" style="text-decoration:none; color:#fff" @click="addDangky" color="blue">Đăng ký</v-btn>
           </v-card-actions>
         </v-form>
       </v-container>
@@ -90,5 +90,10 @@ export default {
       }
     })
   },
+  computed: {
+    phone () {
+      return this.$store.state.phone
+    }
+  }
 }
 </script>

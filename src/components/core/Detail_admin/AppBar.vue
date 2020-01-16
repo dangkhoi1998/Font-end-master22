@@ -6,7 +6,7 @@
       <template v-slot:formNganhNghe="{ itemss }">
         <v-row>
           <v-col cols="12" sm="2">
-            <v-list-item>
+            <v-list-item class="img-repon">
                 <v-img  style="width:80px; height:80px" src="@/assets/logos.png" contain />
           </v-list-item>
           </v-col>
@@ -82,3 +82,11 @@ export default {
   },
 }
 </script>
+<style>
+@media (max-width: 560px) {
+  .img-repon{
+    margin-top: 115px;
+}  
+}
+
+</style>

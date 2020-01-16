@@ -10,14 +10,12 @@ export default {
     links: [
       {
         to: "/admin/nganh-nghe/",
-        icon: "mdi-view-dashboard",
-        text: "Ngành nghề",
+        text: "Ngành hàng",
       },
       {
         to: "/admin/Cai-dat/",
-        icon: "mdi-format-font",
-        text: "Setting",
-      }
+        text: "Danh mục các mặt hàng",
+      },
     ]
   }),
   components: {

@@ -1,10 +1,18 @@
 <template>
-  <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#00497f" flat height="40">
+  <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#00497f" flat height="48">
     <v-container>
-      <b-tabs pills>
-        <b-tab title="Ngành hàng" active><b-card-text></b-card-text></b-tab>
-        <b-tab title="Danh mục mặt hàng"><b-card-text></b-card-text></b-tab>
-      </b-tabs>
+      <v-row>
+        <template v-for="item in links">
+          <v-col cols="12" sm="2" class="">
+            <v-list-item 
+            :to="item.to"
+            active-class="cyan white--text"
+            style="text-decoration:none">
+            <v-list-item-title style="color:#ffff;">{{item.text}}</v-list-item-title>
+          </v-list-item>
+          </v-col>
+        </template>
+      </v-row>
     </v-container>
   </v-app-bar>
 </template>
@@ -46,5 +54,8 @@ export default {
     color: #ffffff;
     font-size:16px;
     font-weight: bold;
+  }
+  .nav-pills .nav-link{
+    border-radius: 0px
   }
 </style>

@@ -193,7 +193,7 @@
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .btn--loader .btn__loading span{
   font-size: 12px;
 }
@@ -250,5 +250,8 @@
 }
 .text-right {
   text-align: right;
+}
+.v-text-field > .v-input__control > .v-input__slot:before{
+  position: fixed
 }
 </style>

@@ -95,8 +95,8 @@
     text-decoration: none;
   }
   .back-img{
-    background-image: url('../../assets/menu.png');
-    background-size: 190%;
+    background-image: url('../../assets/menu1.jpg');
+    background-size: 120%;
     background-repeat: no-repeat;
   }
 </style>
