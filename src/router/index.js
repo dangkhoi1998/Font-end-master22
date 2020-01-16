@@ -5,6 +5,7 @@ import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
 import NghanhNghe from '../components/Admin/Table/NganhNghe'
+import ChitietNN from '../components/Admin/Table/ChiTietNganhHang'
 
 Vue.use(Router)
 
@@ -29,9 +30,14 @@ export default new Router({
           component: HomeNganhNghe,
           children: [
             {
-              path: 'nganh-nghe',
+              path: 'nganh-hang',
               name: 'Nghành nghề',
               component: NghanhNghe,
+            },
+            {
+              path: 'chi-tiet-nganh-hang',
+              name: 'ChitietNN',
+              component: ChitietNN,
             }
           ]
         },

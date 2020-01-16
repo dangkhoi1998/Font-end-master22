@@ -4,7 +4,7 @@
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH NGHỀ</span></div>
         <v-spacer></v-spacer>
-        <v-text-field class="py-0 my-0 mr-4"  v-model="search" append-icon="search" label="Tìm kiếm" single-line hide-details></v-text-field>
+        <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
       </div>
     </div>
     <v-data-table
@@ -45,7 +45,7 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
-        <v-col> 
+        <v-col class="my-0 py-0"> 
           <label class="my-0 py-0 font-weight-bold">Ngành hàng
             <span style="color: red">(*)</span>
           </label>
@@ -193,62 +193,8 @@
   }
 </script>
 
-<style>
-.btn--loader .btn__loading span{
-  font-size: 12px;
-}
-  .background-triangle-big {
-  background-color: #0b72ba;
-  display: inline-block;
-  padding: 9px 15px;
-  width: auto;
-  text-align: right;
-  color: white;
-  position: relative;
-  margin-right: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.background-triangle-small {
-  background-color: #0b72ba;
-  display: inline-block;
-  padding: 3px;
-  width: 25px;
-  text-align: right;
-  color: white;
-  position: relative;
-  margin-right: 20px;
-  text-transform: uppercase;
-}
-
-.background-triangle-small + div.header_tools, .background-triangle-big + div.header_tools {
-  width: -webkit-calc( 100% - 100% );
-  width: calc(100% - 100% );
-  align-items: center
-}
-.background-triangle-big:before {
-  content: "";
-  position: absolute;
-  top: 1px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: -4px;
-  border-top: 28px solid #0b72ba;
-  border-left: 28px solid transparent;
-  border-bottom: 28px solid transparent;
-}
-.background-triangle-small:before {
-  content: "";
-  position: absolute;
-  top: 1px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: -2px;
-  border-top: 19px solid #0b72ba;
-  border-left: 19px solid transparent;
-  border-bottom: 19px solid transparent
-}
-.text-right {
-  text-align: right;
-}
+<style >
+  .mr-4 .v-input__slot {
+    position: inherit !important;
+  }
 </style>

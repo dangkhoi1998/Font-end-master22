@@ -31,6 +31,7 @@ export default {
 
 <style> 
   @import "styles/loading.scss";
+  @import "styles/tieude.scss";
   v-menu .v-text-field {
    background: red!important;
  }

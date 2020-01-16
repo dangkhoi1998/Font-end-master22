@@ -38,8 +38,8 @@
     data() {
       return {
         items: [
-          { text: 'Ngành hàng', icon: 'mdi-clock', to: '/admin/nganh-nghe' },
-          { text: 'Chi tiết ngành hàng', icon: 'mdi-account', to: '/admin/nganh-nghe1' },
+          { text: 'Ngành hàng', icon: 'mdi-clock', to: '/admin/nganh-hang' },
+          { text: 'Chi tiết ngành hàng', icon: 'mdi-account', to: '/admin/chi-tiet-nganh-hang' },
           { text: 'Conversions', icon: 'mdi-flag', to: '/admin/nganh-nghe2' },
         ],
       }
