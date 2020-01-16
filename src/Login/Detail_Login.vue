@@ -3,7 +3,7 @@
     <v-container>
       <app-menu>
         <template v-slot:formEmployees="{ item }" >
-          <app-login></app-login>
+          <app-login style="width:100%"></app-login>
         </template>
       </app-menu>
       <v-row row style="margin-top:100px">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#f5f5f5" flat height="90" >
+    <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#f53d2d" flat height="90" >
       <slot name="formEmployees" :item="item"></slot>
       <slot name="formNganhNghe" :item="itemss"></slot>
     </v-app-bar>
