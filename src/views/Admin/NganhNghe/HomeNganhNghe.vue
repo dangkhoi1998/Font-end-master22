@@ -38,11 +38,21 @@
     data() {
       return {
         items: [
-          { text: 'Thêm mới', icon: 'mdi-clock', to: '/admin/nganh-nghe' },
-          { text: 'Audience', icon: 'mdi-account', to: '/admin/nganh-nghe' },
-          { text: 'Conversions', icon: 'mdi-flag', to: '/admin/nganh-nghe' },
+          { text: 'Ngành hàng', icon: 'mdi-clock', to: '/admin/nganh-nghe' },
+          { text: 'Chi tiết ngành hàng', icon: 'mdi-account', to: '/admin/nganh-nghe1' },
+          { text: 'Conversions', icon: 'mdi-flag', to: '/admin/nganh-nghe2' },
         ],
       }
     },
+    computed: {
+      dialog () {
+        return this.$store.state.dialog
+      }
+    },
+    methods: {
+      addItem () {
+        this.$store.state.dialog = true
+      }
+    }
   }
 </script>
