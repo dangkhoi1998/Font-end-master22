@@ -96,7 +96,7 @@
   }
   .back-img{
     background-image: url('../../assets/menu.png');
-    background-size: 100%;
+    background-size: 190%;
     background-repeat: no-repeat;
   }
 </style>
