@@ -5,6 +5,7 @@ import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
 import NghanhNghe from '../components/Admin/Table/NganhNghe'
+import Homecaidat from '@/views/Admin/NganhNghe/HomeCaiDat'
 
 Vue.use(Router)
 
@@ -34,6 +35,10 @@ export default new Router({
               component: NghanhNghe,
             }
           ]
+        },
+        { path: 'cai-dat',
+          name: 'Cài đặt', 
+          component: Homecaidat,
         },
       ]
     }      

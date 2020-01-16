@@ -13,7 +13,7 @@ export default {
         text: "Ngành hàng",
       },
       {
-        to: "/admin/Cai-dat/",
+        to: "/admin/cai-dat/",
         text: "Danh mục các mặt hàng",
       },
     ]
