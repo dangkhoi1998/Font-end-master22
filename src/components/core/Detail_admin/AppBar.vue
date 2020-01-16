@@ -7,7 +7,7 @@
         <v-row>
           <v-col cols="12" sm="2">
             <v-list-item>
-                <v-img  style="width:80px; height:80px" src="@/assets/logo.png" contain />
+                <v-img  style="width:80px; height:80px" src="@/assets/logos.png" contain />
           </v-list-item>
           </v-col>
           <v-col cols="12" sm="9"></v-col>

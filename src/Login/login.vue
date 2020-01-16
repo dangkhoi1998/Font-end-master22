@@ -8,7 +8,7 @@
             <b-row row>
                 <b-col cols="12" sm="2">
                     <v-list-item>
-                        <v-img class="img2"  style="width:80px; height:80px" src="@/assets/logo.png" contain />
+                        <v-img class="img2"  style="width:80px; height:80px" src="@/assets/logos.png" contain />
                     </v-list-item></b-col>
                 <b-col cols="12" sm="10">
                     <v-card-actions class="mt-5 action1">

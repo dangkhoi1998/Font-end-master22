@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#f53d2d" flat height="90" >
+    <v-app-bar id="core-app-bar" :clipped-left="$vuetify.breakpoint.lgAndUp" app class="back-img" flat height="90" >
       <slot name="formEmployees" :item="item"></slot>
       <slot name="formNganhNghe" :item="itemss"></slot>
     </v-app-bar>
@@ -93,5 +93,10 @@
 
   #core-app-bar a {
     text-decoration: none;
+  }
+  .back-img{
+    background-image: url('../../assets/menu.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
   }
 </style>

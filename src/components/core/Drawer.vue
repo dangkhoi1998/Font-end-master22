@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#ffb376" flat height="38">
+  <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#00497f" flat height="37">
     <v-container>
       <b-tabs pills>
         <b-tab title="Ngành hàng" active><b-card-text></b-card-text></b-tab>
