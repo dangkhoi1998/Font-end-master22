@@ -1,4 +1,84 @@
 {
+  "employee": [
+    {
+      "name": "nghia",
+      "sur_name": "Nguyễn",
+      "middle_name": "Tiến",
+      "sex": "Nam",
+      "email": "nghia1998@gmail.com",
+      "address": "Lũng kênh",
+      "city": "Hà Nội",
+      "country": "Việt Nam",
+      "phone": "0327715848",
+      "user": "nghia11",
+      "pass": "1234",
+      "role": "Supplier",
+      "category": "Điện tử",
+      "id": "1"
+    },
+    {
+      "name": "nghia",
+      "sur_name": "Nguyễn",
+      "middle_name": "Tiến",
+      "sex": "Nam",
+      "email": "nghia1998@gmail.com",
+      "address": "Lũng kênh",
+      "city": "Hà Nội",
+      "country": "Việt Nam",
+      "phone": "0327715848",
+      "user": "nghia11",
+      "pass": "1234",
+      "role": "Supplier",
+      "category": "Điện tử",
+      "id": "2"
+    },
+    {
+      "name": "nghia",
+      "sur_name": "Nguyễn",
+      "middle_name": "Tiến",
+      "sex": "Nam",
+      "email": "nghia1998@gmail.com",
+      "address": "Lũng kênh",
+      "city": "Hà Nội",
+      "country": "Việt Nam",
+      "phone": "0327715848",
+      "user": "nghia11",
+      "pass": "1234",
+      "role": "Supplier",
+      "category": "Điện tử",
+      "id": "3"
+    },
+    {
+      "name": "Khởi",
+      "sur_name": "Nguyễn",
+      "middle_name": "Đăng",
+      "sex": "Nam",
+      "email": "qqqq",
+      "address": "qq",
+      "city": "Thành phố Hà Nội",
+      "country": " Ấn Độ",
+      "phone": "09876543",
+      "user": "q",
+      "pass": "q",
+      "role": "q",
+      "id": "xVSGh9Y"
+    },
+    {
+      "name": "q",
+      "sur_name": "q",
+      "middle_name": "qq",
+      "sex": "Nam",
+      "email": "eq",
+      "address": "qqqqqqqq",
+      "city": "Thành phố Hà Nội",
+      "country": " Pakistan",
+      "phone": "3123211221",
+      "user": "qqqq",
+      "pass": "qqq",
+      "role": "qqq",
+      "id": "L72aKtQ"
+    }
+  ],
   "thanhpho": [
     {
       "id": "01",
@@ -254,905 +334,905 @@
     }
   ],
   "cacnuoc": [
-      {
-        "id": 1,
-        "name": " CHND Trung Hoan2"
-      },
-      {
-        "id": 2,
-        "name": " Ấn Độ"
-      },
-      {
-        "id": 3,
-        "name": " Hoa Kỳ"
-      },
-      {
-        "id": 4,
-        "name": " Indonesia"
-      },
-      {
-        "id": 5,
-        "name": " Brazil"
-      },
-      {
-        "id": 6,
-        "name": " Pakistan"
-      },
-      {
-        "id": 7,
-        "name": " Nigeria"
-      },
-      {
-        "id": 8,
-        "name": " Bangladesh"
-      },
-      {
-        "id": 9,
-        "name": " Liên Bang Nga"
-      },
-      {
-        "id": 10,
-        "name": " Nhật Bản"
-      },
-      {
-        "id": 11,
-        "name": " Mexico"
-      },
-      {
-        "id": 12,
-        "name": " Philippines"
-      },
-      {
-        "id": 13,
-        "name": " Ethiopia"
-      },
-      {
-        "id": 14,
-        "name": " Việt Nam"
-      },
-      {
-        "id": 15,
-        "name": " Ai Cập"
-      },
-      {
-        "id": 16,
-        "name": " Đức"
-      },
-      {
-        "id": 17,
-        "name": " Thổ Nhĩ Kỳ"
-      },
-      {
-        "id": 18,
-        "name": " Iran"
-      },
-      {
-        "id": 19,
-        "name": " CHDC Congo"
-      },
-      {
-        "id": 20,
-        "name": " Thái Lan"
-      },
-      {
-        "id": 21,
-        "name": " Phápn3"
-      },
-      {
-        "id": 22,
-        "name": " Anh Quốc"
-      },
-      {
-        "id": 23,
-        "name": " Ý"
-      },
-      {
-        "id": 24,
-        "name": " Myanmar"
-      },
-      {
-        "id": 25,
-        "name": " Hàn Quốc"
-      },
-      {
-        "id": 26,
-        "name": " Nam Phi"
-      },
-      {
-        "id": 27,
-        "name": " Tanzania"
-      },
-      {
-        "id": 28,
-        "name": " Tây Ban Nha"
-      },
-      {
-        "id": 29,
-        "name": " Colombia"
-      },
-      {
-        "id": 30,
-        "name": " Ukraina"
-      },
-      {
-        "id": 31,
-        "name": " Kenya"
-      },
-      {
-        "id": 32,
-        "name": " Argentina"
-      },
-      {
-        "id": 33,
-        "name": " Ba Lan"
-      },
-      {
-        "id": 34,
-        "name": " Algeria"
-      },
-      {
-        "id": 35,
-        "name": " Sudann16"
-      },
-      {
-        "id": 36,
-        "name": " Uganda"
-      },
-      {
-        "id": 37,
-        "name": " Canada"
-      },
-      {
-        "id": 38,
-        "name": " Maroc"
-      },
-      {
-        "id": 39,
-        "name": " Iraq"
-      },
-      {
-        "id": 40,
-        "name": " Afghanistan"
-      },
-      {
-        "id": 41,
-        "name": " Nepal"
-      },
-      {
-        "id": 42,
-        "name": " Peru"
-      },
-      {
-        "id": 43,
-        "name": " Malaysia"
-      },
-      {
-        "id": 44,
-        "name": " Uzbekistan"
-      },
-      {
-        "id": 45,
-        "name": " Venezuela"
-      },
-      {
-        "id": 46,
-        "name": " Ả Rập Saudi"
-      },
-      {
-        "id": 47,
-        "name": " Yemen"
-      },
-      {
-        "id": 48,
-        "name": " Ghana"
-      },
-      {
-        "id": 49,
-        "name": " CHDCND Triều Tiên"
-      },
-      {
-        "id": 50,
-        "name": " Mozambique"
-      },
-      {
-        "id": 51,
-        "name": " Trung Hoa Dân Quốc (Đài Loan)n4"
-      },
-      {
-        "id": 52,
-        "name": " Madagascar"
-      },
-      {
-        "id": 53,
-        "name": " Syria"
-      },
-      {
-        "id": 54,
-        "name": " Bờ Biển Ngà"
-      },
-      {
-        "id": 55,
-        "name": " Úcn5"
-      },
-      {
-        "id": 56,
-        "name": " Romania"
-      },
-      {
-        "id": 57,
-        "name": " Sri Lanka"
-      },
-      {
-        "id": 58,
-        "name": " Cameroon"
-      },
-      {
-        "id": 59,
-        "name": " Angola"
-      },
-      {
-        "id": 60,
-        "name": " Burkina Faso"
-      },
-      {
-        "id": 61,
-        "name": " Kazakhstan"
-      },
-      {
-        "id": 62,
-        "name": " Chile"
-      },
-      {
-        "id": 63,
-        "name": " Niger"
-      },
-      {
-        "id": 64,
-        "name": " Hà Lan"
-      },
-      {
-        "id": 65,
-        "name": " Malawi"
-      },
-      {
-        "id": 66,
-        "name": " Mali"
-      },
-      {
-        "id": 67,
-        "name": " Ecuador"
-      },
-      {
-        "id": 68,
-        "name": " Campuchia"
-      },
-      {
-        "id": 69,
-        "name": " Guatemala"
-      },
-      {
-        "id": 70,
-        "name": " Zambia"
-      },
-      {
-        "id": 71,
-        "name": " Senegal"
-      },
-      {
-        "id": 72,
-        "name": " Zimbabwe"
-      },
-      {
-        "id": 73,
-        "name": " Tchad"
-      },
-      {
-        "id": 74,
-        "name": " Hy Lạp"
-      },
-      {
-        "id": 75,
-        "name": " Cuba"
-      },
-      {
-        "id": 76,
-        "name": " Bỉ"
-      },
-      {
-        "id": 77,
-        "name": " Bồ Đào Nha"
-      },
-      {
-        "id": 78,
-        "name": " Tunisia"
-      },
-      {
-        "id": 79,
-        "name": " Cộng hòa Séc"
-      },
-      {
-        "id": 80,
-        "name": " Bolivia"
-      },
-      {
-        "id": 81,
-        "name": " Rwanda"
-      },
-      {
-        "id": 82,
-        "name": " Guinea"
-      },
-      {
-        "id": 83,
-        "name": " Haiti"
-      },
-      {
-        "id": 84,
-        "name": " Hungary"
-      },
-      {
-        "id": 85,
-        "name": " Belarus"
-      },
-      {
-        "id": 86,
-        "name": " Thụy Điển"
-      },
-      {
-        "id": 87,
-        "name": " Cộng hòa Dominica"
-      },
-      {
-        "id": 88,
-        "name": " Somalian7"
-      },
-      {
-        "id": 89,
-        "name": " Azerbaijan"
-      },
-      {
-        "id": 90,
-        "name": " Benin"
-      },
-      {
-        "id": 91,
-        "name": " Burundi"
-      },
-      {
-        "id": 92,
-        "name": " Áo"
-      },
-      {
-        "id": 93,
-        "name": " Các tiểu vương quốc Ả rập thống nhất (UEA)"
-      },
-      {
-        "id": 94,
-        "name": " Nam Sudann16"
-      },
-      {
-        "id": 95,
-        "name": " Honduras"
-      },
-      {
-        "id": 96,
-        "name": " Thụy Sĩ"
-      },
-      {
-        "id": 97,
-        "name": " Israeln8"
-      },
-      {
-        "id": 98,
-        "name": " Bulgaria"
-      },
-      {
-        "id": 99,
-        "name": " Serbian6"
-      },
-      {
-        "id": 100,
-        "name": " Tajikistan"
-      },
-      {
-        "id": 101,
-        "name": " Hồng Kông"
-      },
-      {
-        "id": 102,
-        "name": " Papua New Guinea"
-      },
-      {
-        "id": 103,
-        "name": " Togo"
-      },
-      {
-        "id": 104,
-        "name": " Libya"
-      },
-      {
-        "id": 105,
-        "name": " Jordan"
-      },
-      {
-        "id": 106,
-        "name": " Paraguay"
-      },
-      {
-        "id": 107,
-        "name": " Lào"
-      },
-      {
-        "id": 108,
-        "name": " El Salvador"
-      },
-      {
-        "id": 109,
-        "name": " Sierra Leone"
-      },
-      {
-        "id": 110,
-        "name": " Nicaragua"
-      },
-      {
-        "id": 111,
-        "name": " Đan Mạch"
-      },
-      {
-        "id": 112,
-        "name": " Slovakia"
-      },
-      {
-        "id": 113,
-        "name": " Kyrgyzstan"
-      },
-      {
-        "id": 114,
-        "name": " Phần Lann9"
-      },
-      {
-        "id": 115,
-        "name": " Eritrea"
-      },
-      {
-        "id": 116,
-        "name": " Turkmenistan"
-      },
-      {
-        "id": 117,
-        "name": " Singapore"
-      },
-      {
-        "id": 118,
-        "name": " Na Uyn10"
-      },
-      {
-        "id": 119,
-        "name": " Costa Rica"
-      },
-      {
-        "id": 120,
-        "name": " Cộng hòa Trung Phi"
-      },
-      {
-        "id": 121,
-        "name": " Ireland"
-      },
-      {
-        "id": 122,
-        "name": " Gruzian11"
-      },
-      {
-        "id": 123,
-        "name": " Croatia"
-      },
-      {
-        "id": 124,
-        "name": " New Zealand"
-      },
-      {
-        "id": 125,
-        "name": " Liban"
-      },
-      {
-        "id": 126,
-        "name": " Liberia"
-      },
-      {
-        "id": 127,
-        "name": " Vùng lãnh thổ Palestine"
-      },
-      {
-        "id": 128,
-        "name": " Bosna và Hercegovina"
-      },
-      {
-        "id": 129,
-        "name": " Cộng hòa Congo"
-      },
-      {
-        "id": 130,
-        "name": " Puerto Rico"
-      },
-      {
-        "id": 131,
-        "name": " Moldovan12"
-      },
-      {
-        "id": 132,
-        "name": " Panama"
-      },
-      {
-        "id": 133,
-        "name": " Mauritania"
-      },
-      {
-        "id": 134,
-        "name": " Uruguay"
-      },
-      {
-        "id": 135,
-        "name": " Armenia"
-      },
-      {
-        "id": 136,
-        "name": " Litva"
-      },
-      {
-        "id": 137,
-        "name": " Albania"
-      },
-      {
-        "id": 138,
-        "name": " Kuwait"
-      },
-      {
-        "id": 139,
-        "name": " Mông Cổ"
-      },
-      {
-        "id": 140,
-        "name": " Jamaica"
-      },
-      {
-        "id": 141,
-        "name": " Oman"
-      },
-      {
-        "id": 142,
-        "name": " Latvia"
-      },
-      {
-        "id": 143,
-        "name": " Namibia"
-      },
-      {
-        "id": 144,
-        "name": " Lesotho"
-      },
-      {
-        "id": 145,
-        "name": " Cộng hòa Macedonia"
-      },
-      {
-        "id": 146,
-        "name": " Slovenia"
-      },
-      {
-        "id": 147,
-        "name": " Botswana"
-      },
-      {
-        "id": 148,
-        "name": " Gambia"
-      },
-      {
-        "id": 149,
-        "name": " Qatar"
-      },
-      {
-        "id": 150,
-        "name": " Guinea-Bissau"
-      },
-      {
-        "id": 151,
-        "name": " Gabon"
-      },
-      {
-        "id": 152,
-        "name": " Estonia"
-      },
-      {
-        "id": 153,
-        "name": " Trinidad và Tobago"
-      },
-      {
-        "id": 154,
-        "name": " Mauritius"
-      },
-      {
-        "id": 155,
-        "name": " Bahrain"
-      },
-      {
-        "id": 156,
-        "name": " Swaziland"
-      },
-      {
-        "id": 157,
-        "name": " Đông Timor"
-      },
-      {
-        "id": 158,
-        "name": " Djibouti"
-      },
-      {
-        "id": 159,
-        "name": " Fiji"
-      },
-      {
-        "id": 160,
-        "name": " Sípn14"
-      },
-      {
-        "id": 161,
-        "name": " Guyana"
-      },
-      {
-        "id": 162,
-        "name": " Comorosn15"
-      },
-      {
-        "id": 163,
-        "name": " Guinea Xích Đạo [1]"
-      },
-      {
-        "id": 164,
-        "name": " Bhutan"
-      },
-      {
-        "id": 165,
-        "name": " Montenegro"
-      },
-      {
-        "id": 166,
-        "name": " Macau"
-      },
-      {
-        "id": 167,
-        "name": " Tây Sahara"
-      },
-      {
-        "id": 168,
-        "name": " Quần đảo Solomon"
-      },
-      {
-        "id": 169,
-        "name": " Suriname"
-      },
-      {
-        "id": 170,
-        "name": " Luxembourg"
-      },
-      {
-        "id": 171,
-        "name": " Cape Verde"
-      },
-      {
-        "id": 172,
-        "name": " Malta"
-      },
-      {
-        "id": 173,
-        "name": " Brunei"
-      },
-      {
-        "id": 174,
-        "name": " Bahamas"
-      },
-      {
-        "id": 175,
-        "name": " Belize"
-      },
-      {
-        "id": 176,
-        "name": " Iceland"
-      },
-      {
-        "id": 177,
-        "name": " Maldives"
-      },
-      {
-        "id": 178,
-        "name": " Barbados"
-      },
-      {
-        "id": 179,
-        "name": " Vanuatu"
-      },
-      {
-        "id": 180,
-        "name": " Samoa"
-      },
-      {
-        "id": 181,
-        "name": " Guam"
-      },
-      {
-        "id": 182,
-        "name": " Saint Lucia"
-      },
-      {
-        "id": 183,
-        "name": " São Tomé và Príncipe"
-      },
-      {
-        "id": 184,
-        "name": " Curaçao"
-      },
-      {
-        "id": 185,
-        "name": " Saint Vincent và Grenadines"
-      },
-      {
-        "id": 186,
-        "name": " Quần đảo Virgin thuộc Mỹ"
-      },
-      {
-        "id": 187,
-        "name": " Aruba"
-      },
-      {
-        "id": 188,
-        "name": " Grenada"
-      },
-      {
-        "id": 189,
-        "name": " Tonga"
-      },
-      {
-        "id": 190,
-        "name": " Liên bang Micronesia"
-      },
-      {
-        "id": 191,
-        "name": " Kiribati"
-      },
-      {
-        "id": 192,
-        "name": " Jersey"
-      },
-      {
-        "id": 193,
-        "name": " Antigua và Barbuda"
-      },
-      {
-        "id": 194,
-        "name": " Seychelles"
-      },
-      {
-        "id": 195,
-        "name": " Andorra"
-      },
-      {
-        "id": 196,
-        "name": " Đảo Man"
-      },
-      {
-        "id": 197,
-        "name": " Samoa thuộc Mỹ"
-      },
-      {
-        "id": 198,
-        "name": " Dominica"
-      },
-      {
-        "id": 199,
-        "name": " Bermuda"
-      },
-      {
-        "id": 200,
-        "name": " Guernsey"
-      },
-      {
-        "id": 201,
-        "name": " Quần đảo Bắc Mariana"
-      },
-      {
-        "id": 202,
-        "name": " Greenland"
-      },
-      {
-        "id": 203,
-        "name": " Quần đảo Cayman"
-      },
-      {
-        "id": 204,
-        "name": " Quần đảo Marshall"
-      },
-      {
-        "id": 205,
-        "name": " Saint Kitts và Nevis"
-      },
-      {
-        "id": 206,
-        "name": " Quần đảo Faroe"
-      },
-      {
-        "id": 207,
-        "name": " Quần đảo Turks và Caicos"
-      },
-      {
-        "id": 208,
-        "name": " Sint Maarten"
-      },
-      {
-        "id": 209,
-        "name": " Liechtenstein"
-      },
-      {
-        "id": 210,
-        "name": " Monaco"
-      },
-      {
-        "id": 211,
-        "name": " San Marino"
-      },
-      {
-        "id": 212,
-        "name": " Gibraltar"
-      },
-      {
-        "id": 213,
-        "name": " Quần đảo Virgin thuộc Anh"
-      },
-      {
-        "id": 214,
-        "name": " Quần đảo Cook"
-      },
-      {
-        "id": 215,
-        "name": " Palau"
-      },
-      {
-        "id": 216,
-        "name": " Anguilla"
-      },
-      {
-        "id": 217,
-        "name": " Nauru"
-      },
-      {
-        "id": 218,
-        "name": " Tuvalu"
-      },
-      {
-        "id": 219,
-        "name": " Montserrat"
-      },
-      {
-        "id": 220,
-        "name": " Saint Helena, Ascension và Tristan da Cunha"
-      },
-      {
-        "id": 221,
-        "name": " Quần đảo Falkland"
-      },
-      {
-        "id": 222,
-        "name": " Niue"
-      },
-      {
-        "id": 223,
-        "name": " Tokelau"
-      },
-      {
-        "id": 224,
-        "name": " Vatican"
-      },
-      {
-        "id": 225,
-        "name": " Quần đảo Pitcairn"
-      }
-    ]
+    {
+      "id": 1,
+      "name": " CHND Trung Hoan2"
+    },
+    {
+      "id": 2,
+      "name": " Ấn Độ"
+    },
+    {
+      "id": 3,
+      "name": " Hoa Kỳ"
+    },
+    {
+      "id": 4,
+      "name": " Indonesia"
+    },
+    {
+      "id": 5,
+      "name": " Brazil"
+    },
+    {
+      "id": 6,
+      "name": " Pakistan"
+    },
+    {
+      "id": 7,
+      "name": " Nigeria"
+    },
+    {
+      "id": 8,
+      "name": " Bangladesh"
+    },
+    {
+      "id": 9,
+      "name": " Liên Bang Nga"
+    },
+    {
+      "id": 10,
+      "name": " Nhật Bản"
+    },
+    {
+      "id": 11,
+      "name": " Mexico"
+    },
+    {
+      "id": 12,
+      "name": " Philippines"
+    },
+    {
+      "id": 13,
+      "name": " Ethiopia"
+    },
+    {
+      "id": 14,
+      "name": " Việt Nam"
+    },
+    {
+      "id": 15,
+      "name": " Ai Cập"
+    },
+    {
+      "id": 16,
+      "name": " Đức"
+    },
+    {
+      "id": 17,
+      "name": " Thổ Nhĩ Kỳ"
+    },
+    {
+      "id": 18,
+      "name": " Iran"
+    },
+    {
+      "id": 19,
+      "name": " CHDC Congo"
+    },
+    {
+      "id": 20,
+      "name": " Thái Lan"
+    },
+    {
+      "id": 21,
+      "name": " Phápn3"
+    },
+    {
+      "id": 22,
+      "name": " Anh Quốc"
+    },
+    {
+      "id": 23,
+      "name": " Ý"
+    },
+    {
+      "id": 24,
+      "name": " Myanmar"
+    },
+    {
+      "id": 25,
+      "name": " Hàn Quốc"
+    },
+    {
+      "id": 26,
+      "name": " Nam Phi"
+    },
+    {
+      "id": 27,
+      "name": " Tanzania"
+    },
+    {
+      "id": 28,
+      "name": " Tây Ban Nha"
+    },
+    {
+      "id": 29,
+      "name": " Colombia"
+    },
+    {
+      "id": 30,
+      "name": " Ukraina"
+    },
+    {
+      "id": 31,
+      "name": " Kenya"
+    },
+    {
+      "id": 32,
+      "name": " Argentina"
+    },
+    {
+      "id": 33,
+      "name": " Ba Lan"
+    },
+    {
+      "id": 34,
+      "name": " Algeria"
+    },
+    {
+      "id": 35,
+      "name": " Sudann16"
+    },
+    {
+      "id": 36,
+      "name": " Uganda"
+    },
+    {
+      "id": 37,
+      "name": " Canada"
+    },
+    {
+      "id": 38,
+      "name": " Maroc"
+    },
+    {
+      "id": 39,
+      "name": " Iraq"
+    },
+    {
+      "id": 40,
+      "name": " Afghanistan"
+    },
+    {
+      "id": 41,
+      "name": " Nepal"
+    },
+    {
+      "id": 42,
+      "name": " Peru"
+    },
+    {
+      "id": 43,
+      "name": " Malaysia"
+    },
+    {
+      "id": 44,
+      "name": " Uzbekistan"
+    },
+    {
+      "id": 45,
+      "name": " Venezuela"
+    },
+    {
+      "id": 46,
+      "name": " Ả Rập Saudi"
+    },
+    {
+      "id": 47,
+      "name": " Yemen"
+    },
+    {
+      "id": 48,
+      "name": " Ghana"
+    },
+    {
+      "id": 49,
+      "name": " CHDCND Triều Tiên"
+    },
+    {
+      "id": 50,
+      "name": " Mozambique"
+    },
+    {
+      "id": 51,
+      "name": " Trung Hoa Dân Quốc (Đài Loan)n4"
+    },
+    {
+      "id": 52,
+      "name": " Madagascar"
+    },
+    {
+      "id": 53,
+      "name": " Syria"
+    },
+    {
+      "id": 54,
+      "name": " Bờ Biển Ngà"
+    },
+    {
+      "id": 55,
+      "name": " Úcn5"
+    },
+    {
+      "id": 56,
+      "name": " Romania"
+    },
+    {
+      "id": 57,
+      "name": " Sri Lanka"
+    },
+    {
+      "id": 58,
+      "name": " Cameroon"
+    },
+    {
+      "id": 59,
+      "name": " Angola"
+    },
+    {
+      "id": 60,
+      "name": " Burkina Faso"
+    },
+    {
+      "id": 61,
+      "name": " Kazakhstan"
+    },
+    {
+      "id": 62,
+      "name": " Chile"
+    },
+    {
+      "id": 63,
+      "name": " Niger"
+    },
+    {
+      "id": 64,
+      "name": " Hà Lan"
+    },
+    {
+      "id": 65,
+      "name": " Malawi"
+    },
+    {
+      "id": 66,
+      "name": " Mali"
+    },
+    {
+      "id": 67,
+      "name": " Ecuador"
+    },
+    {
+      "id": 68,
+      "name": " Campuchia"
+    },
+    {
+      "id": 69,
+      "name": " Guatemala"
+    },
+    {
+      "id": 70,
+      "name": " Zambia"
+    },
+    {
+      "id": 71,
+      "name": " Senegal"
+    },
+    {
+      "id": 72,
+      "name": " Zimbabwe"
+    },
+    {
+      "id": 73,
+      "name": " Tchad"
+    },
+    {
+      "id": 74,
+      "name": " Hy Lạp"
+    },
+    {
+      "id": 75,
+      "name": " Cuba"
+    },
+    {
+      "id": 76,
+      "name": " Bỉ"
+    },
+    {
+      "id": 77,
+      "name": " Bồ Đào Nha"
+    },
+    {
+      "id": 78,
+      "name": " Tunisia"
+    },
+    {
+      "id": 79,
+      "name": " Cộng hòa Séc"
+    },
+    {
+      "id": 80,
+      "name": " Bolivia"
+    },
+    {
+      "id": 81,
+      "name": " Rwanda"
+    },
+    {
+      "id": 82,
+      "name": " Guinea"
+    },
+    {
+      "id": 83,
+      "name": " Haiti"
+    },
+    {
+      "id": 84,
+      "name": " Hungary"
+    },
+    {
+      "id": 85,
+      "name": " Belarus"
+    },
+    {
+      "id": 86,
+      "name": " Thụy Điển"
+    },
+    {
+      "id": 87,
+      "name": " Cộng hòa Dominica"
+    },
+    {
+      "id": 88,
+      "name": " Somalian7"
+    },
+    {
+      "id": 89,
+      "name": " Azerbaijan"
+    },
+    {
+      "id": 90,
+      "name": " Benin"
+    },
+    {
+      "id": 91,
+      "name": " Burundi"
+    },
+    {
+      "id": 92,
+      "name": " Áo"
+    },
+    {
+      "id": 93,
+      "name": " Các tiểu vương quốc Ả rập thống nhất (UEA)"
+    },
+    {
+      "id": 94,
+      "name": " Nam Sudann16"
+    },
+    {
+      "id": 95,
+      "name": " Honduras"
+    },
+    {
+      "id": 96,
+      "name": " Thụy Sĩ"
+    },
+    {
+      "id": 97,
+      "name": " Israeln8"
+    },
+    {
+      "id": 98,
+      "name": " Bulgaria"
+    },
+    {
+      "id": 99,
+      "name": " Serbian6"
+    },
+    {
+      "id": 100,
+      "name": " Tajikistan"
+    },
+    {
+      "id": 101,
+      "name": " Hồng Kông"
+    },
+    {
+      "id": 102,
+      "name": " Papua New Guinea"
+    },
+    {
+      "id": 103,
+      "name": " Togo"
+    },
+    {
+      "id": 104,
+      "name": " Libya"
+    },
+    {
+      "id": 105,
+      "name": " Jordan"
+    },
+    {
+      "id": 106,
+      "name": " Paraguay"
+    },
+    {
+      "id": 107,
+      "name": " Lào"
+    },
+    {
+      "id": 108,
+      "name": " El Salvador"
+    },
+    {
+      "id": 109,
+      "name": " Sierra Leone"
+    },
+    {
+      "id": 110,
+      "name": " Nicaragua"
+    },
+    {
+      "id": 111,
+      "name": " Đan Mạch"
+    },
+    {
+      "id": 112,
+      "name": " Slovakia"
+    },
+    {
+      "id": 113,
+      "name": " Kyrgyzstan"
+    },
+    {
+      "id": 114,
+      "name": " Phần Lann9"
+    },
+    {
+      "id": 115,
+      "name": " Eritrea"
+    },
+    {
+      "id": 116,
+      "name": " Turkmenistan"
+    },
+    {
+      "id": 117,
+      "name": " Singapore"
+    },
+    {
+      "id": 118,
+      "name": " Na Uyn10"
+    },
+    {
+      "id": 119,
+      "name": " Costa Rica"
+    },
+    {
+      "id": 120,
+      "name": " Cộng hòa Trung Phi"
+    },
+    {
+      "id": 121,
+      "name": " Ireland"
+    },
+    {
+      "id": 122,
+      "name": " Gruzian11"
+    },
+    {
+      "id": 123,
+      "name": " Croatia"
+    },
+    {
+      "id": 124,
+      "name": " New Zealand"
+    },
+    {
+      "id": 125,
+      "name": " Liban"
+    },
+    {
+      "id": 126,
+      "name": " Liberia"
+    },
+    {
+      "id": 127,
+      "name": " Vùng lãnh thổ Palestine"
+    },
+    {
+      "id": 128,
+      "name": " Bosna và Hercegovina"
+    },
+    {
+      "id": 129,
+      "name": " Cộng hòa Congo"
+    },
+    {
+      "id": 130,
+      "name": " Puerto Rico"
+    },
+    {
+      "id": 131,
+      "name": " Moldovan12"
+    },
+    {
+      "id": 132,
+      "name": " Panama"
+    },
+    {
+      "id": 133,
+      "name": " Mauritania"
+    },
+    {
+      "id": 134,
+      "name": " Uruguay"
+    },
+    {
+      "id": 135,
+      "name": " Armenia"
+    },
+    {
+      "id": 136,
+      "name": " Litva"
+    },
+    {
+      "id": 137,
+      "name": " Albania"
+    },
+    {
+      "id": 138,
+      "name": " Kuwait"
+    },
+    {
+      "id": 139,
+      "name": " Mông Cổ"
+    },
+    {
+      "id": 140,
+      "name": " Jamaica"
+    },
+    {
+      "id": 141,
+      "name": " Oman"
+    },
+    {
+      "id": 142,
+      "name": " Latvia"
+    },
+    {
+      "id": 143,
+      "name": " Namibia"
+    },
+    {
+      "id": 144,
+      "name": " Lesotho"
+    },
+    {
+      "id": 145,
+      "name": " Cộng hòa Macedonia"
+    },
+    {
+      "id": 146,
+      "name": " Slovenia"
+    },
+    {
+      "id": 147,
+      "name": " Botswana"
+    },
+    {
+      "id": 148,
+      "name": " Gambia"
+    },
+    {
+      "id": 149,
+      "name": " Qatar"
+    },
+    {
+      "id": 150,
+      "name": " Guinea-Bissau"
+    },
+    {
+      "id": 151,
+      "name": " Gabon"
+    },
+    {
+      "id": 152,
+      "name": " Estonia"
+    },
+    {
+      "id": 153,
+      "name": " Trinidad và Tobago"
+    },
+    {
+      "id": 154,
+      "name": " Mauritius"
+    },
+    {
+      "id": 155,
+      "name": " Bahrain"
+    },
+    {
+      "id": 156,
+      "name": " Swaziland"
+    },
+    {
+      "id": 157,
+      "name": " Đông Timor"
+    },
+    {
+      "id": 158,
+      "name": " Djibouti"
+    },
+    {
+      "id": 159,
+      "name": " Fiji"
+    },
+    {
+      "id": 160,
+      "name": " Sípn14"
+    },
+    {
+      "id": 161,
+      "name": " Guyana"
+    },
+    {
+      "id": 162,
+      "name": " Comorosn15"
+    },
+    {
+      "id": 163,
+      "name": " Guinea Xích Đạo [1]"
+    },
+    {
+      "id": 164,
+      "name": " Bhutan"
+    },
+    {
+      "id": 165,
+      "name": " Montenegro"
+    },
+    {
+      "id": 166,
+      "name": " Macau"
+    },
+    {
+      "id": 167,
+      "name": " Tây Sahara"
+    },
+    {
+      "id": 168,
+      "name": " Quần đảo Solomon"
+    },
+    {
+      "id": 169,
+      "name": " Suriname"
+    },
+    {
+      "id": 170,
+      "name": " Luxembourg"
+    },
+    {
+      "id": 171,
+      "name": " Cape Verde"
+    },
+    {
+      "id": 172,
+      "name": " Malta"
+    },
+    {
+      "id": 173,
+      "name": " Brunei"
+    },
+    {
+      "id": 174,
+      "name": " Bahamas"
+    },
+    {
+      "id": 175,
+      "name": " Belize"
+    },
+    {
+      "id": 176,
+      "name": " Iceland"
+    },
+    {
+      "id": 177,
+      "name": " Maldives"
+    },
+    {
+      "id": 178,
+      "name": " Barbados"
+    },
+    {
+      "id": 179,
+      "name": " Vanuatu"
+    },
+    {
+      "id": 180,
+      "name": " Samoa"
+    },
+    {
+      "id": 181,
+      "name": " Guam"
+    },
+    {
+      "id": 182,
+      "name": " Saint Lucia"
+    },
+    {
+      "id": 183,
+      "name": " São Tomé và Príncipe"
+    },
+    {
+      "id": 184,
+      "name": " Curaçao"
+    },
+    {
+      "id": 185,
+      "name": " Saint Vincent và Grenadines"
+    },
+    {
+      "id": 186,
+      "name": " Quần đảo Virgin thuộc Mỹ"
+    },
+    {
+      "id": 187,
+      "name": " Aruba"
+    },
+    {
+      "id": 188,
+      "name": " Grenada"
+    },
+    {
+      "id": 189,
+      "name": " Tonga"
+    },
+    {
+      "id": 190,
+      "name": " Liên bang Micronesia"
+    },
+    {
+      "id": 191,
+      "name": " Kiribati"
+    },
+    {
+      "id": 192,
+      "name": " Jersey"
+    },
+    {
+      "id": 193,
+      "name": " Antigua và Barbuda"
+    },
+    {
+      "id": 194,
+      "name": " Seychelles"
+    },
+    {
+      "id": 195,
+      "name": " Andorra"
+    },
+    {
+      "id": 196,
+      "name": " Đảo Man"
+    },
+    {
+      "id": 197,
+      "name": " Samoa thuộc Mỹ"
+    },
+    {
+      "id": 198,
+      "name": " Dominica"
+    },
+    {
+      "id": 199,
+      "name": " Bermuda"
+    },
+    {
+      "id": 200,
+      "name": " Guernsey"
+    },
+    {
+      "id": 201,
+      "name": " Quần đảo Bắc Mariana"
+    },
+    {
+      "id": 202,
+      "name": " Greenland"
+    },
+    {
+      "id": 203,
+      "name": " Quần đảo Cayman"
+    },
+    {
+      "id": 204,
+      "name": " Quần đảo Marshall"
+    },
+    {
+      "id": 205,
+      "name": " Saint Kitts và Nevis"
+    },
+    {
+      "id": 206,
+      "name": " Quần đảo Faroe"
+    },
+    {
+      "id": 207,
+      "name": " Quần đảo Turks và Caicos"
+    },
+    {
+      "id": 208,
+      "name": " Sint Maarten"
+    },
+    {
+      "id": 209,
+      "name": " Liechtenstein"
+    },
+    {
+      "id": 210,
+      "name": " Monaco"
+    },
+    {
+      "id": 211,
+      "name": " San Marino"
+    },
+    {
+      "id": 212,
+      "name": " Gibraltar"
+    },
+    {
+      "id": 213,
+      "name": " Quần đảo Virgin thuộc Anh"
+    },
+    {
+      "id": 214,
+      "name": " Quần đảo Cook"
+    },
+    {
+      "id": 215,
+      "name": " Palau"
+    },
+    {
+      "id": 216,
+      "name": " Anguilla"
+    },
+    {
+      "id": 217,
+      "name": " Nauru"
+    },
+    {
+      "id": 218,
+      "name": " Tuvalu"
+    },
+    {
+      "id": 219,
+      "name": " Montserrat"
+    },
+    {
+      "id": 220,
+      "name": " Saint Helena, Ascension và Tristan da Cunha"
+    },
+    {
+      "id": 221,
+      "name": " Quần đảo Falkland"
+    },
+    {
+      "id": 222,
+      "name": " Niue"
+    },
+    {
+      "id": 223,
+      "name": " Tokelau"
+    },
+    {
+      "id": 224,
+      "name": " Vatican"
+    },
+    {
+      "id": 225,
+      "name": " Quần đảo Pitcairn"
+    }
+  ]
 }

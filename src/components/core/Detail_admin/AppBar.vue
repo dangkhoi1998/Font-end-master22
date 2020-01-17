@@ -10,7 +10,14 @@
                 <v-img  style="width:80px; height:80px" src="@/assets/logos.png" contain />
           </v-list-item>
           </v-col>
-          <v-col cols="12" sm="9"></v-col>
+          <v-col cols="12" sm="9" class="mt-5">
+            <span style="
+            color: #f26522;
+            white-space: nowrap;
+            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            text-align: left;
+            font-weight: bold; font-size:28px">Phần mềm hỗ trợ bán hàng hiệu quả hàng đầu tại Việt Nam!</span>
+          </v-col>
           <v-col cols="12" sm="1" class="mt-7">
               <v-menu bottom center offset-y transition="slide-y-transition" >
                 <template v-slot:activator="{ attrs, on }">
@@ -86,7 +93,15 @@ export default {
 @media (max-width: 560px) {
   .img-repon{
     margin-top: 115px;
-}  
+}
+.text-logo{
+  margin-top: 5px;
+    color: #f26522;
+    white-space: nowrap;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    text-align: left;
+    font-weight: bold;
+ }
 }
 
 </style>

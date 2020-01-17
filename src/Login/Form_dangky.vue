@@ -13,43 +13,43 @@
         >
           <v-row>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="user.name" color="deep-purple" label="Tên" required outlined dense></v-text-field>
+              <v-text-field v-model="nhansu.name" color="deep-purple" label="Tên" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="user.sur_name" color="deep-purple" label="Họ" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.sur_name" color="deep-purple" label="Họ" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="user.middle_name" color="deep-purple" label="Đệm" required outlined dense></v-text-field>
+              <v-text-field v-model="nhansu.middle_name" color="deep-purple" label="Đệm" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-combobox v-model="user.sex" :items="sex" label="Giới tính" required outlined dense></v-combobox> 
+              <v-combobox v-model="nhansu.sex" :items="sex" label="Giới tính" required outlined dense></v-combobox> 
             </v-col>
             <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="user.email" color="deep-purple" label="Email" required outlined dense></v-text-field>
+              <v-text-field v-model="nhansu.email" color="deep-purple" label="Email" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="user.address" color="deep-purple" label="Địa chỉ" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.address" color="deep-purple" label="Địa chỉ" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
-              <v-combobox v-model="user.city" label="Thành phố" :items="items" required outlined dense></v-combobox>
+              <v-combobox v-model="nhansu.city" label="Thành phố" :items="items" required outlined dense></v-combobox>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
-              <v-combobox v-model="user.country" label="Quốc gia" :items="cacnuoc" required outlined dense></v-combobox>
+              <v-combobox v-model="nhansu.country" label="Quốc gia" :items="cacnuoc" required outlined dense></v-combobox>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
-              <v-text-field v-model="user.phone" :rules="phone" color="deep-purple" label="Số điện thoại" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.phone" :rules="phone" color="deep-purple" label="Số điện thoại" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="6">
-              <v-text-field v-model="user.user" color="deep-purple" label="Tên đăng nhập" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.user" color="deep-purple" label="Tên đăng nhập" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="user.pass" color="deep-purple" :type="show1 ? 'text' : 'password'" label="Password" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.pass" color="deep-purple" :type="show1 ? 'text' : 'password'" label="Password" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12">
-              <v-combobox v-model="user.role" label="Ngành nghề" required outlined dense></v-combobox>
+              <v-combobox v-model="nhansu.role" label="Ngành nghề" required outlined dense></v-combobox>
             </v-col>
             <v-col class="my-0 py-0" cols="12">
-              <v-combobox v-model="user.category" label="Mặt hàng" required outlined dense></v-combobox>
+              <v-combobox v-model="nhansu.category" label="Mặt hàng" required outlined dense></v-combobox>
             </v-col>
           </v-row>
           <v-card-actions>
@@ -63,11 +63,12 @@
 </template>
 <script>
 import axios from 'axios'
+import api from '../api/http'
 import seclectData from '../components/json/thanhpho.json'
 export default {
   data() {
     return {
-      user:[],
+      nhansu:[],
       show1:false,
       password: undefined,
       sex:['Nam', 'Nữ'],
@@ -78,6 +79,35 @@ export default {
   created () {
   },
   methods: {
+    addDangky () {
+      var vm = this
+      if (vm.$refs.formDangKy.validate()) {
+        api
+        .post('employee', {
+          name: this.nhansu.name,
+          sur_name: this.nhansu.sur_name,
+          middle_name: this.nhansu.middle_name,
+          sex: this.nhansu.sex,
+          email: this.nhansu.email,
+          address: this.nhansu.address,
+          city: this.nhansu.city,
+          country: this.nhansu.country,
+          phone: this.nhansu.phone,
+          user: this.nhansu.user,
+          pass: this.nhansu.pass,
+          role: this.nhansu.role,
+          category: this.nhansu.category,
+        })
+          .then(response => {
+            console.log(response)
+          })
+          .catch(error => {
+            console.log(error)
+          })
+        this.$emit('snackbar', this.snackbar=true)
+        vm.nhansu = []
+      }
+    }
   },
   beforeCreate () {
     var vm = this
@@ -92,7 +122,7 @@ export default {
   },
   computed: {
     phone () {
-      return this.$store.state.phone
+      // return this.$store.state.phone
     }
   }
 }

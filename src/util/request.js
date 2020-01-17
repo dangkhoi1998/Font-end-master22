@@ -6,7 +6,7 @@ const request = axios.create({
 })
 
 request.interceptors.response.use(response => {
-  //response.data = response.data.slice(0, 10)
+  response.data = response.data.slice(0, 10)
   return response
 })
 export default request

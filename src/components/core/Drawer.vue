@@ -1,18 +1,16 @@
 <template>
   <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#00497f" flat height="48">
     <v-container>
-      <v-row>
         <template v-for="item in links">
-          <v-col cols="12" sm="2" class="">
-            <v-list-item 
-            :to="item.to"
-            active-class="blue white--text"
-            style="text-decoration:none">
-            <v-list-item-title style="color:#ffff; font-size:18px">{{item.text}}</v-list-item-title>
-          </v-list-item>
-          </v-col>
+            <v-btn
+              color="#00497f"
+              :to="item.to"
+              style="height:48px; color:#ffff; border-radius:0px; text-decoration:none"
+              active-class="blue white--text"
+            >
+              {{item.text}}
+            </v-btn>
         </template>
-      </v-row>
     </v-container>
   </v-app-bar>
 </template>
