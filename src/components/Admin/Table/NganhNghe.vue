@@ -157,8 +157,7 @@
           Putcategory(this.category)
             .then(reponse => {
               Object.assign(this.desserts[this.editedIndex], this.category)
-              
-        this.category = {}
+              this.category = {}
             })
             .catch(error => {
               console.log(error)
