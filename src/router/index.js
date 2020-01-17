@@ -7,7 +7,8 @@ import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
 import NghanhNghe from '../components/Admin/Table/NganhNghe'
 import Homecaidat from '@/views/Admin/NganhNghe/HomeCaiDat'
 import ChitietNN from '../components/Admin/Table/ChiTietNganhHang'
-
+import QLTK from '../views/Admin/Quanlytaikhoan/Home-QL-tai-khoan'
+ 
 Vue.use(Router)
 
 export default new Router({
@@ -42,9 +43,9 @@ export default new Router({
             }
           ]
         },
-        { path: 'cai-dat',
-          name: 'Cài đặt', 
-          component: Homecaidat,
+        { path: 'quan-ly-tai-khoan',
+          name: 'QLTK', 
+          component: QLTK,
         },
       ]
     }      

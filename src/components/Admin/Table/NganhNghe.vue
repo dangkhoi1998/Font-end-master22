@@ -16,7 +16,7 @@
       class="elevation-1"
     >
       <template v-slot:item.Id="{item}">
-        {{desserts.indexOf(item)}}
+        {{desserts.indexOf(item) + 1}}
       </template>
       <template v-slot:item.action="{item}">
         <v-icon

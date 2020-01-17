@@ -9,12 +9,12 @@ export default {
   data: () => ({
     links: [
       {
-        to: "/admin/nganh-nghe/",
+        to: "/admin/nganh-hang/",
         text: "Ngành hàng",
       },
       {
-        to: "/admin/cai-dat/",
-        text: "Danh mục các mặt hàng",
+        to: "/admin/quan-ly-tai-khoan/",
+        text: "Quản lý tài khoản",
       },
     ]
   }),

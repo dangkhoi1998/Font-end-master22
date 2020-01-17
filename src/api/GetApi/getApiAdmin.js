@@ -6,3 +6,10 @@ export function getcategory () {
     method: 'get',
   })
 }
+
+export function getregister () {
+  return request({
+    url: 'register',
+    method: 'get',
+  })
+}
