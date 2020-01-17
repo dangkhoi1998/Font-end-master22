@@ -111,13 +111,13 @@
         headers: [
           {
             text: 'STT',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'Id',
           },
           { text: 'Tên ngành nghề', value: 'name' },
           { text: 'Mô tả', value: 'desc' },
-          { text: 'Actions', value: 'action', sortable: false },
+          { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         category: {},
         desserts: [
@@ -193,8 +193,29 @@
   }
 </script>
 
-<style >
+<style>
   .mr-4 .v-input__slot {
     position: inherit !important;
   }
+
+table.v-datatable td:nth-child(1) {
+  width: 8%;
+  padding: 0px ! important;
+  text-align: center ! important;
+}
+table.v-datatable td:nth-child(2) {
+  width: 65%;
+  padding: 0px ! important;
+}
+table.v-datatable td:nth-child(3) {
+  width: 15%;
+ padding: 0px ! important;
+}
+table.v-datatable td:nth-child(4) {
+  width: 10%;
+  padding: 0px ! important;
+}
+.text-xs-right input {
+  text-align: right;
+}
 </style>

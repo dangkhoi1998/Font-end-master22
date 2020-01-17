@@ -9,7 +9,7 @@
         >
           <v-list dense class="my-0 py-0">
             <v-btn style="width: 100%" @click="addItem()">Thêm mới</v-btn>
-            <v-list-item-group v-model="item" color=" #e1e2e1">
+            <v-list-item-group color=" #e1e2e1">
               <v-list-item
                 v-for="(item, i) in items"
                 :key="i"
