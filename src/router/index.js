@@ -6,6 +6,7 @@ import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
 import NghanhNghe from '../components/Admin/Table/NganhNghe'
 import Homecaidat from '@/views/Admin/NganhNghe/HomeCaiDat'
+import ChitietNN from '../components/Admin/Table/ChiTietNganhHang'
 
 Vue.use(Router)
 
@@ -33,12 +34,12 @@ export default new Router({
               path: 'nganh-hang',
               name: 'Nghành nghề',
               component: NghanhNghe,
-             }
-            // {
-            //   path: 'chi-tiet-nganh-hang',
-            //   name: 'ChitietNN',
-            //   component: ChitietNN,
-            // }
+             },
+            {
+              path: 'chi-tiet-nganh-hang',
+              name: 'ChitietNN',
+              component: ChitietNN,
+            }
           ]
         },
         { path: 'cai-dat',
