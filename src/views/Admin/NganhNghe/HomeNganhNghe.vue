@@ -9,7 +9,7 @@
         >
           <v-list dense class="my-0 py-0">
             <v-btn style="width: 100%" @click="addItem()">Thêm mới</v-btn>
-            <v-list-item-group v-model="item" color=" #e1e2e1">
+            <v-list-item-group color=" #e1e2e1">
               <v-list-item
                 v-for="(item, i) in items"
                 :key="i"
@@ -38,8 +38,8 @@
     data() {
       return {
         items: [
-          { text: 'Ngành hàng', icon: 'mdi-clock', to: '/admin/nganh-nghe' },
-          { text: 'Chi tiết ngành hàng', icon: 'mdi-account', to: '/admin/nganh-nghe1' },
+          { text: 'Ngành hàng', icon: 'mdi-clock', to: '/admin/nganh-hang' },
+          { text: 'Chi tiết ngành hàng', icon: 'mdi-account', to: '/admin/chi-tiet-nganh-hang' },
           { text: 'Conversions', icon: 'mdi-flag', to: '/admin/nganh-nghe2' },
         ],
       }

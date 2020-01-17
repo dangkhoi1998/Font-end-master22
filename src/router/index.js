@@ -30,10 +30,15 @@ export default new Router({
           component: HomeNganhNghe,
           children: [
             {
-              path: 'nganh-nghe',
+              path: 'nganh-hang',
               name: 'Nghành nghề',
               component: NghanhNghe,
-            }
+             }
+            // {
+            //   path: 'chi-tiet-nganh-hang',
+            //   name: 'ChitietNN',
+            //   component: ChitietNN,
+            // }
           ]
         },
         { path: 'cai-dat',

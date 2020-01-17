@@ -79,6 +79,103 @@
       "id": "L72aKtQ"
     }
   ],
+  "testNganhhang": [
+    {
+      "id": 29,
+      "name": "Điện tử",
+      "parent": "null",
+      "path": [
+          "null"
+      ],
+      "desc": "null"
+    },
+    {
+        "id": 30,
+        "name": "Máy tính linh kiện",
+        "parent": "Điện tử",
+        "path": [
+            "Điện tử"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 31,
+        "name": "Server",
+        "parent": "Máy tính linh kiện",
+        "path": [
+            "Điện tử",
+            "Máy tính linh kiện"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 32,
+        "name": "Laptop",
+        "parent": "Máy tính linh kiện",
+        "path": [
+            "Điện tử",
+            "Máy tính linh kiện"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 33,
+        "name": "Ram",
+        "parent": "Máy tính linh kiện",
+        "path": [
+            "Điện tử",
+            "Máy tính linh kiện"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 34,
+        "name": "Điện thoại",
+        "parent": "Điện tử",
+        "path": [
+            "Điện tử"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 35,
+        "name": "Iphone",
+        "parent": "Điện thoại",
+        "path": [
+            "Điện tử",
+            "Điện thoại"
+        ],
+        "desc": "null"
+    },
+    {
+        "id": 36,
+        "name": "Samsung",
+        "parent": "Điện thoại",
+        "path": [
+            "Điện tử",
+            "Điện thoại"
+        ],
+        "desc": "null"
+    },
+    {
+      "id": 37,
+      "name": "Thời trang",
+      "parent": "null",
+      "path": [
+          "null"
+      ],
+      "desc": "null"
+    },
+    {
+      "id": 38,
+      "name": "Quần áo",
+      "parent": "Thời trang",
+      "path": [
+          "Thời trang"
+      ],
+      "desc": "null"
+    }
+  ],
   "thanhpho": [
     {
       "id": "01",

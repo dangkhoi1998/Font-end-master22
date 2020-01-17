@@ -4,7 +4,7 @@
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH NGHỀ</span></div>
         <v-spacer></v-spacer>
-        <v-text-field class="py-0 my-0 mr-4"  v-model="search" append-icon="search" label="Tìm kiếm" single-line hide-details></v-text-field>
+        <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
       </div>
     </div>
     <v-data-table
@@ -45,7 +45,7 @@
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
-        <v-col> 
+        <v-col class="my-0 py-0"> 
           <label class="my-0 py-0 font-weight-bold">Ngành hàng
             <span style="color: red">(*)</span>
           </label>
@@ -111,13 +111,13 @@
         headers: [
           {
             text: 'STT',
-            align: 'left',
+            align: 'center',
             sortable: false,
             value: 'Id',
           },
           { text: 'Tên ngành nghề', value: 'name' },
           { text: 'Mô tả', value: 'desc' },
-          { text: 'Actions', value: 'action', sortable: false },
+          { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         category: {},
         desserts: [
@@ -157,8 +157,7 @@
           Putcategory(this.category)
             .then(reponse => {
               Object.assign(this.desserts[this.editedIndex], this.category)
-              
-        this.category = {}
+              this.category = {}
             })
             .catch(error => {
               console.log(error)
@@ -192,63 +191,29 @@
     }
   }
 </script>
+<style>
+  .mr-4 .v-input__slot {
+    position: inherit !important;
+  }
 
-<style lang="scss" scoped>
-.btn--loader .btn__loading span{
-  font-size: 12px;
+table.v-datatable td:nth-child(1) {
+  width: 8%;
+  padding: 0px ! important;
+  text-align: center ! important;
 }
-  .background-triangle-big {
-  background-color: #0b72ba;
-  display: inline-block;
-  padding: 9px 15px;
-  width: auto;
-  text-align: right;
-  color: white;
-  position: relative;
-  margin-right: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
+table.v-datatable td:nth-child(2) {
+  width: 65%;
+  padding: 0px ! important;
 }
-.background-triangle-small {
-  background-color: #0b72ba;
-  display: inline-block;
-  padding: 3px;
-  width: 25px;
-  text-align: right;
-  color: white;
-  position: relative;
-  margin-right: 20px;
-  text-transform: uppercase;
+table.v-datatable td:nth-child(3) {
+  width: 15%;
+ padding: 0px ! important;
 }
-
-.background-triangle-small + div.header_tools, .background-triangle-big + div.header_tools {
-  width: -webkit-calc( 100% - 100% );
-  width: calc(100% - 100% );
-  align-items: center
+table.v-datatable td:nth-child(4) {
+  width: 10%;
+  padding: 0px ! important;
 }
-.background-triangle-big:before {
-  content: "";
-  position: absolute;
-  top: 1px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: -4px;
-  border-top: 28px solid #0b72ba;
-  border-left: 28px solid transparent;
-  border-bottom: 28px solid transparent;
-}
-.background-triangle-small:before {
-  content: "";
-  position: absolute;
-  top: 1px;
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: -2px;
-  border-top: 19px solid #0b72ba;
-  border-left: 19px solid transparent;
-  border-bottom: 19px solid transparent
-}
-.text-right {
+.text-xs-right input {
   text-align: right;
 }
 .v-text-field > .v-input__control > .v-input__slot:before{
