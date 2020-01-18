@@ -124,12 +124,12 @@
               </label>
               <v-combobox v-model="nhansu.role" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <!-- <v-col class="my-0 py-0 mt-2" cols="12">
               <label class="my-0 py-0">Mặt hàng
                 <span style="color: red">(*)</span>
               </label>
               <v-combobox v-model="nhansu.category" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
-            </v-col>
+            </v-col> -->
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>

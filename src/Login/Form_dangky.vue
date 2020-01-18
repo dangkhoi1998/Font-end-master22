@@ -84,12 +84,12 @@
               </label>
               <v-combobox v-model="nhansu.role" placeholder="Ngành nghề" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <!-- <v-col class="my-0 py-0 mt-2" cols="12">
               <label class="my-0 py-0">Mặt hàng
                 <span style="color: red">(*)</span>
               </label>
               <v-combobox v-model="nhansu.category" placeholder="Mặt hàng" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
-            </v-col>
+            </v-col> -->
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -100,8 +100,8 @@
     </v-card>
     <v-snackbar v-model="snackbar1" color="red" top dark >
       <v-icon color="white" class="mr-3">mdi-bell-plus</v-icon>
-      <div>Đăng ký tài khoản thành công</div>
-      <v-btn icon  @click="snackbar1 = false" >
+      <div>{{text1}}</div>
+      <v-btn icon  @click="$store.state.snackbar1 = false" >
         <v-icon>mdi-close-circle</v-icon>
       </v-btn>
     </v-snackbar>
@@ -125,7 +125,6 @@ export default {
   },
   methods: {
     addDangky () {
-      this.$store.state.snackbar1 = true
       // var vm = this
       // if (vm.$refs.formDangKy.validate()) {
       //   axios.post('http://192.168.1.250:17000/register', this.nhansu)
@@ -137,6 +136,8 @@ export default {
       //     })
       //   vm.nhansu = {}
       // }
+      this.$store.state.snackbar1 = true
+      this.$store.state.text1 = 'Đăng ký tài khoản thành công'
     }
   },
   beforeCreate () {
@@ -153,6 +154,9 @@ export default {
   computed: {
     snackbar1 () {
       return this.$store.state.snackbar1
+    },
+    text1 () {
+      return this.$store.state.text1
     }
   }
 }
