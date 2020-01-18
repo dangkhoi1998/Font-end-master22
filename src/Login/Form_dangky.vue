@@ -11,65 +11,110 @@
           lazy-validation
           class="pa-4"
         >
-          <v-row>
+          <v-row class="my-0 py-0">
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="nhansu.name" color="deep-purple" label="Tên" required outlined dense></v-text-field>
-            </v-col>
-            <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="nhansu.sur_name" color="deep-purple" label="Họ" required outlined dense ></v-text-field>
-            </v-col>
-            <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-text-field v-model="nhansu.middle_name" color="deep-purple" label="Đệm" required outlined dense></v-text-field>
+              <label class="my-0 py-0">Tên
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
-              <v-combobox v-model="nhansu.sex" :items="sex" label="Giới tính" required outlined dense></v-combobox> 
+              <label class="my-0 py-0">Họ
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.sur_name" placeholder="Họ" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" color="deep-purple" hide-details="auto"  required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="nhansu.email" color="deep-purple" label="Email" required outlined dense></v-text-field>
+            <v-col class="my-0 py-0 mt-2" cols="12" sm="6">
+              <label class="my-0 py-0">Đệm
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.middle_name" placeholder="Đệm" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" color="deep-purple" hide-details="auto" required outlined dense></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="nhansu.address" color="deep-purple" label="Địa chỉ" required outlined dense ></v-text-field>
+            <v-col class="my-0 py-0 mt-2" cols="12" sm="6">
+              <label class="my-0 py-0">Giới tính 
+                <span style="color: red">(*)</span>
+              </label>
+              <v-combobox v-model="nhansu.sex" :items="sex" placeholder="Giới tính" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox> 
             </v-col>
-            <v-col class="my-0 py-0" cols="6">
-              <v-combobox v-model="nhansu.city" label="Thành phố" :items="items" required outlined dense></v-combobox>
+            <v-col class="my-0 py-0 mt-2" cols="12">
+              <label class="my-0 py-0">Email
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.email" placeholder="Email" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" color="deep-purple" hide-details="auto" required outlined dense></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="6">
-              <v-combobox v-model="nhansu.country" label="Quốc gia" :items="cacnuoc" required outlined dense></v-combobox>
+            <v-col class="my-0 py-0 mt-2" cols="12">
+              <label class="my-0 py-0">Địa chỉ
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.address" placeholder="Địa chỉ" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="6">
-              <v-text-field v-model="nhansu.phone" :rules="phone" color="deep-purple" label="Số điện thoại" required outlined dense ></v-text-field>
+            <v-col class="my-0 py-0 mt-2" cols="6">
+              <label class="my-0 py-0">Thành phố
+                <span style="color: red">(*)</span>
+              </label>
+              <v-combobox v-model="nhansu.city" placeholder="Thành phố" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" :items="items" required outlined dense></v-combobox>
             </v-col>
-            <v-col class="my-0 py-0" cols="6">
-              <v-text-field v-model="nhansu.user" color="deep-purple" label="Tên đăng nhập" required outlined dense ></v-text-field>
+            <v-col class="my-0 py-0 mt-2" cols="6">
+              <label class="my-0 py-0">Quốc gia
+                <span style="color: red">(*)</span>
+              </label>
+              <v-combobox v-model="nhansu.country" placeholder="Quốc gia" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" :items="cacnuoc" required outlined dense></v-combobox>
             </v-col>
-            <v-col class="my-0 py-0" cols="12">
-              <v-text-field v-model="nhansu.pass" color="deep-purple" :type="show1 ? 'text' : 'password'" label="Password" required outlined dense ></v-text-field>
+            <v-col class="my-0 py-0 mt-2" cols="6">
+              <label class="my-0 py-0">Số điện thoại
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.phone" placeholder="Số điện thoại" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" color="deep-purple" hide-details="auto" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="12">
-              <v-combobox v-model="nhansu.role" label="Ngành nghề" required outlined dense></v-combobox>
+            <v-col class="my-0 py-0 mt-2" cols="6">
+              <label class="my-0 py-0">Tên đăng nhập
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.user" placeholder="Tên đăng nhập" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0" cols="12">
-              <v-combobox v-model="nhansu.category" label="Mặt hàng" required outlined dense></v-combobox>
+            <v-col class="my-0 py-0 mt-2" cols="12">
+              <label class="my-0 py-0">Password
+                <span style="color: red">(*)</span>
+              </label>
+              <v-text-field v-model="nhansu.pass" placeholder="Password" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" :type="show1 ? 'text' : 'password'" required outlined dense ></v-text-field>
+            </v-col>
+            <v-col class="my-0 py-0 mt-2" cols="12">
+              <label class="my-0 py-0">Ngành nghề
+                <span style="color: red">(*)</span>
+              </label>
+              <v-combobox v-model="nhansu.role" placeholder="Ngành nghề" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
+            </v-col>
+            <v-col class="my-0 py-0 mt-2" cols="12">
+              <label class="my-0 py-0">Mặt hàng
+                <span style="color: red">(*)</span>
+              </label>
+              <v-combobox v-model="nhansu.category" placeholder="Mặt hàng" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
             </v-col>
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="ml-4" style="text-decoration:none; color:#fff" @click="addDangky" color="blue">Đăng ký</v-btn>
+            <v-btn class="ml-4" style="text-decoration:none; color:#fff" @click="addDangky()" color="blue">Đăng ký</v-btn>
           </v-card-actions>
         </v-form>
       </v-container>
     </v-card>
+    <v-snackbar v-model="snackbar1" color="red" top dark >
+      <v-icon color="white" class="mr-3">mdi-bell-plus</v-icon>
+      <div>Đăng ký tài khoản thành công</div>
+      <v-btn icon  @click="snackbar1 = false" >
+        <v-icon>mdi-close-circle</v-icon>
+      </v-btn>
+    </v-snackbar>
   </div>
 </template>
 <script>
 import axios from 'axios'
-import api from '../api/http'
 import seclectData from '../components/json/thanhpho.json'
 export default {
   data() {
     return {
-      nhansu:[],
-      show1:false,
+      nhansu: {},
+      show1: false,
       password: undefined,
       sex:['Nam', 'Nữ'],
       items: [],
@@ -80,33 +125,18 @@ export default {
   },
   methods: {
     addDangky () {
-      var vm = this
-      if (vm.$refs.formDangKy.validate()) {
-        api
-        .post('employee', {
-          name: this.nhansu.name,
-          sur_name: this.nhansu.sur_name,
-          middle_name: this.nhansu.middle_name,
-          sex: this.nhansu.sex,
-          email: this.nhansu.email,
-          address: this.nhansu.address,
-          city: this.nhansu.city,
-          country: this.nhansu.country,
-          phone: this.nhansu.phone,
-          user: this.nhansu.user,
-          pass: this.nhansu.pass,
-          role: this.nhansu.role,
-          category: this.nhansu.category,
-        })
-          .then(response => {
-            console.log(response)
-          })
-          .catch(error => {
-            console.log(error)
-          })
-        this.$emit('snackbar', this.snackbar=true)
-        vm.nhansu = []
-      }
+      this.$store.state.snackbar1 = true
+      // var vm = this
+      // if (vm.$refs.formDangKy.validate()) {
+      //   axios.post('http://192.168.1.250:17000/register', this.nhansu)
+      //     .then(response => {
+      //       console.log(response)
+      //     })
+      //     .catch(error => {
+      //       console.log(error)
+      //     })
+      //   vm.nhansu = {}
+      // }
     }
   },
   beforeCreate () {
@@ -121,8 +151,8 @@ export default {
     })
   },
   computed: {
-    phone () {
-      // return this.$store.state.phone
+    snackbar1 () {
+      return this.$store.state.snackbar1
     }
   }
 }
