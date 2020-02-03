@@ -36,32 +36,34 @@
     </v-data-table>
     <!-- Them moi nganh hang -->
     <v-dialog v-model="dialog" persistent max-width="450">
-      <v-card>
-        <v-card-title class="headline mb-4" style="background: #0b72ba">
-          <span style="color: white">Thêm mới nghành hàng 
-          </span>
-          <v-spacer></v-spacer>
-          <v-btn icon dark @click="Back()">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-card-title>
-        <v-col class="my-0 py-0"> 
-          <label class="my-0 py-0 font-weight-bold">Ngành hàng
-            <span style="color: red">(*)</span>
-          </label>
-          <v-text-field v-model="category.name" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" filled dense hide-details="auto"></v-text-field>
+      <v-form v-model="valid">
+        <v-card>
+          <v-card-title class="headline mb-4" style="background: #0b72ba">
+            <span style="color: white">Thêm mới nghành hàng 
+            </span>
+            <v-spacer></v-spacer>
+            <v-btn icon dark @click="Back()">
+              <v-icon>mdi-close</v-icon>
+            </v-btn>
+          </v-card-title>
+          <v-col class="my-0 py-0"> 
+            <label class="my-0 py-0 font-weight-bold">Ngành hàng
+              <span style="color: red">(*)</span>
+            </label>
+            <v-text-field v-model="category.name" required outlined dense placeholder="Ngành hàng" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]"  hide-details="auto"></v-text-field>
 
-          <label class=" mt-3 my-0 py-0 font-weight-bold" >Mô tả nghành hàng 
-            <span style="color: red">(*)</span>
-          </label>
-          <v-textarea v-model="category.desc" filled name="input-7-4" rows="2"></v-textarea>
-        </v-col>
-          
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="#0b72ba" @click="AddItem()"><lable style="color: white">Lưu lại</lable></v-btn>
-        </v-card-actions>
-      </v-card>
+            <label class=" mt-3 my-0 py-0 font-weight-bold" >Mô tả nghành hàng 
+              <span style="color: red">(*)</span>
+            </label>
+            <v-textarea v-model="category.desc" placeholder="Mô tả nghành hàng" required outlined dense name="input-7-4" rows="2"></v-textarea>
+          </v-col>
+            
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="#0b72ba" :disabled="!valid" @click="AddItem()"><lable style="color: white">Lưu lại</lable></v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-form>
     </v-dialog>
     <!-- xóa categroy -->
     <v-dialog v-model="dialog1" persistent max-width="500px">
@@ -106,6 +108,7 @@
     data () {
       return {
         search: '',
+        valid: false,
         editedIndex: -1,
         dialog1: false,
         headers: [

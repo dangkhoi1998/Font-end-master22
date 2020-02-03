@@ -49,6 +49,7 @@
         <v-form
           ref="formDangKy"
           lazy-validation
+          v-model="valid"
           class="pa-4"
         >
           <v-row class="my-0 py-0">
@@ -56,7 +57,7 @@
               <label class="my-0 py-0">Tên
                 <span style="color: red">(*)</span>
               </label>
-              <v-text-field v-model="nhansu.name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
+              <v-text-field v-model="nhansu.first_name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
               <label class="my-0 py-0">Họ
@@ -104,7 +105,7 @@
               <label class="my-0 py-0">Số điện thoại
                 <span style="color: red">(*)</span>
               </label>
-              <v-text-field v-model="nhansu.phone" :rules="phone" color="deep-purple" hide-details="auto" required outlined dense ></v-text-field>
+              <v-text-field v-model="nhansu.phone" color="deep-purple" hide-details="auto" required outlined dense ></v-text-field>
             </v-col>
             <v-col class="my-0 py-0 mt-2" cols="6">
               <label class="my-0 py-0">Tên đăng nhập
@@ -112,13 +113,13 @@
               </label>
               <v-text-field v-model="nhansu.user" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <v-col class="my-0 py-0 mt-2" cols="6">
               <label class="my-0 py-0">Password
                 <span style="color: red">(*)</span>
               </label>
               <v-text-field v-model="nhansu.pass" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" :type="show1 ? 'text' : 'password'" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <v-col class="my-0 py-0 mt-2" cols="6">
               <label class="my-0 py-0">Ngành nghề
                 <span style="color: red">(*)</span>
               </label>
@@ -133,7 +134,7 @@
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="ml-4" style="text-decoration:none; color:#fff" @click="addDangky()" color="blue">Lưu lại</v-btn>
+            <v-btn class="ml-4" :disabled="!valid" style="text-decoration:none; color:#fff" @click="Editregister()" color="blue">Lưu lại</v-btn>
           </v-card-actions>
         </v-form>
       </v-card>
@@ -142,6 +143,7 @@
 </template>
 <script>
   import { getregister } from '../../../api/GetApi/getApiAdmin'
+  import { Putregister } from '../../../api/PutApi/PutAdminApi'
   import axios from 'axios'
   export default {
     data () {
@@ -149,6 +151,10 @@
         search: '',
         editedIndex: -1,
         sex:['Nam', 'Nữ'],
+        show1: false,
+        items: [],
+        valid: false,
+        cacnuoc: [],
         nhansu: {
           pass: ''
         },
@@ -183,10 +189,8 @@
     methods: {
       listRegister () {
         getregister()
-        //axios.get('http://192.168.1.250:17000/register')
           .then(response => {
             this.desserts = response.data
-            console.log('ddddđ', this.desserts)
           })
           .catch(error => {
             console.log(error)
@@ -198,8 +202,14 @@
         this.nhansu.pass = ''
         this.dialog1 = true
       },
-      addDangky () {
-        Object.assign(this.desserts[this.editedIndex], this.nhansu)
+      Editregister () {
+        console.log('ddddd', this.nhansu)
+        Putregisterr(this.nhansu)
+          .then(response => {
+          })
+        // axios.put('http://192.168.1.250:17000/register', this.nhansu)
+        // Object.assign(this.desserts[this.editedIndex], this.nhansu)
+        this.dialog1 = false
         //this.nhansu = {}
       }
     }

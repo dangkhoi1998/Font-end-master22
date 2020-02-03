@@ -5,7 +5,6 @@ import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
 import NghanhNghe from '../components/Admin/Table/NganhNghe'
-import Homecaidat from '@/views/Admin/NganhNghe/HomeCaiDat'
 import ChitietNN from '../components/Admin/Table/ChiTietNganhHang'
 import QLTK from '../views/Admin/Quanlytaikhoan/Home-QL-tai-khoan'
  

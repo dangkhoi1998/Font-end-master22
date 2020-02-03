@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card max-width="450" class="mx-auto my-0 py-0">
+    <v-card max-width="700" class="mx-auto my-0 py-0">
       <v-app-bar dark color="blue">
         <v-toolbar-title class="ml-5 mt-3"><span>Đăng ký tài khoản</span></v-toolbar-title>
         <v-spacer></v-spacer>
@@ -8,7 +8,7 @@
       <v-container>
         <v-form
           ref="formDangKy"
-          lazy-validation
+          v-model="valid"
           class="pa-4"
         >
           <v-row class="my-0 py-0">
@@ -16,7 +16,7 @@
               <label class="my-0 py-0">Tên
                 <span style="color: red">(*)</span>
               </label>
-              <v-text-field v-model="nhansu.name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
+              <v-text-field v-model="nhansu.first_name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
             </v-col>
             <v-col class="my-0 py-0" cols="12" sm="6">
               <label class="my-0 py-0">Họ
@@ -32,7 +32,7 @@
             </v-col>
             <v-col class="my-0 py-0 mt-2" cols="12" sm="6">
               <label class="my-0 py-0">Giới tính 
-                <span style="color: red">(*)</span>
+                <!-- <span style="color: red">(*)</span> -->
               </label>
               <v-combobox v-model="nhansu.sex" :items="sex" placeholder="Giới tính" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox> 
             </v-col>
@@ -72,13 +72,13 @@
               </label>
               <v-text-field v-model="nhansu.user" placeholder="Tên đăng nhập" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <v-col class="my-0 py-0 mt-2" cols="6">
               <label class="my-0 py-0">Password
                 <span style="color: red">(*)</span>
               </label>
               <v-text-field v-model="nhansu.pass" placeholder="Password" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" color="deep-purple" :type="show1 ? 'text' : 'password'" required outlined dense ></v-text-field>
             </v-col>
-            <v-col class="my-0 py-0 mt-2" cols="12">
+            <v-col class="my-0 py-0 mt-2" cols="6">
               <label class="my-0 py-0">Ngành nghề
                 <span style="color: red">(*)</span>
               </label>
@@ -93,7 +93,7 @@
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="ml-4" style="text-decoration:none; color:#fff" @click="addDangky()" color="blue">Đăng ký</v-btn>
+            <v-btn class="ml-4" :disabled="!valid" style="text-decoration:none; color:#fff" @click="addDangky()" color="blue">Đăng ký</v-btn>
           </v-card-actions>
         </v-form>
       </v-container>
@@ -116,6 +116,7 @@ export default {
       nhansu: {},
       show1: false,
       password: undefined,
+      valid: false,
       sex:['Nam', 'Nữ'],
       items: [],
       cacnuoc: []
@@ -125,19 +126,19 @@ export default {
   },
   methods: {
     addDangky () {
-      // var vm = this
-      // if (vm.$refs.formDangKy.validate()) {
-      //   axios.post('http://192.168.1.250:17000/register', this.nhansu)
-      //     .then(response => {
-      //       console.log(response)
-      //     })
-      //     .catch(error => {
-      //       console.log(error)
-      //     })
-      //   vm.nhansu = {}
-      // }
-      this.$store.state.snackbar1 = true
-      this.$store.state.text1 = 'Đăng ký tài khoản thành công'
+      var vm = this
+      if (vm.$refs.formDangKy.validate()) {
+        axios.post('http://192.168.1.250:17000/register', this.nhansu)
+          .then(response => {
+            console.log(response)
+            this.$store.state.snackbar1 = true
+            this.$store.state.text1 = 'Đăng ký tài khoản thành công'
+          })
+          .catch(error => {
+            console.log(error)
+          })
+          vm.nhansu = {}
+      }
     }
   },
   beforeCreate () {

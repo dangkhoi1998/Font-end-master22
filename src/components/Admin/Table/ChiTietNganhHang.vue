@@ -30,6 +30,9 @@
       :items-per-page="5"
       class="elevation-1"
     >
+      <template v-slot:item._id="{item}">
+        {{desserts.indexOf(item) + 1}}
+      </template>
       <template v-slot:item.action="{item}">
         <v-icon
           small
@@ -103,7 +106,7 @@ export default {
         text: 'STT',
         align: 'center',
         sortable: false,
-        value: 'id',
+        value: '_id',
       },
       { text: 'Tên ngành hàng', value: 'name' },
       { text: 'Mô tả', value: 'desc' },
