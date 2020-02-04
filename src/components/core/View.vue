@@ -1,5 +1,5 @@
 <template>
-  <v-content class="white" style="padding-top:90  px;">
+  <v-content style="padding-top:90px; background: #f0f4f7">
     <div id="core-view" style="margin-bottom: 100px;">
       <v-fade-transition mode="out-in">
         <router-view />

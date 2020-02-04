@@ -110,6 +110,7 @@
 <script>
 import axios from 'axios'
 import seclectData from '../components/json/thanhpho.json'
+import { Postregister } from '../api/PostApi/PostApiAdmin'
 export default {
   data() {
     return {
@@ -128,7 +129,8 @@ export default {
     addDangky () {
       var vm = this
       if (vm.$refs.formDangKy.validate()) {
-        axios.post('http://192.168.1.250:17000/register', this.nhansu)
+        //axios.post('http://192.168.1.250:17000/register', this.nhansu)
+        Postregister(this.nhansu)
           .then(response => {
             console.log(response)
             this.$store.state.snackbar1 = true

@@ -1,21 +1,60 @@
 <template>
-  <v-app-bar style="margin-top:90px" :clipped-left="$vuetify.breakpoint.lgAndUp" app color="#00497f" flat height="48">
-    <v-container>
-        <template v-for="item in links">
-            <v-btn
-              color="#00497f"
-              :to="item.to"
-              style="height:48px; color:#ffff; border-radius:0px; text-decoration:none"
-              active-class="blue white--text"
-            >
-              {{item.text}}
-            </v-btn>
-        </template>
-    </v-container>
-  </v-app-bar>
+  <v-navigation-drawer
+    id="app-drawer"
+    v-model="inputValue"
+    app
+    color="grey darken-2"
+    dark
+    floating
+    mobile-break-point="991"
+    persistent
+    width="250"
+    clipped
+  >
+    <v-list class="py-0">
+      
+      <template v-for="item in links">
+        <v-list-group
+          v-if="item.items"
+          active-class="#6c757d white--text"
+          style="text-decoration:none"
+          no-action
+          :prepend-icon="item.action"
+          >
+          <template v-slot:activator >
+              <v-list-item-icon :to="item.to">
+                <v-icon>{{item.icon}}</v-icon>
+              </v-list-item-icon>
+              <v-list-item-title>{{item.text}}</v-list-item-title>
+            </template>
+
+            <v-list-item
+              v-for=" subitem in item.items"
+              style="text-decoration:none"
+              active-class="#6c757d white--text"
+              :to="subitem.to"
+            > 
+              <v-list-item-title style="font-size: 14px;">{{subitem.title}}</v-list-item-title>
+            </v-list-item>
+        </v-list-group>
+        
+        <v-list-item 
+          v-else
+          :to="item.to"
+          active-class="#6c757d white--text"
+          style="text-decoration:none">
+          <v-list-item-icon>
+            <v-icon>{{item.icon}}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-title> {{item.text}}</v-list-item-title>
+        </v-list-item>
+      </template>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
+// Utilities
 import { mapMutations, mapState } from "vuex";
 export default {
   props: {
@@ -31,7 +70,7 @@ export default {
   data: () => ({
   }),
   computed: {
-    ...mapState("app", [ "color"]),
+    ...mapState("app", ["image", "color"]),
     inputValue: {
       get() {
         return this.$store.state.app.drawer;
@@ -46,13 +85,3 @@ export default {
   }
 };
 </script>
-<style>
-  .v-application a{
-    color: #ffffff;
-    font-size:16px;
-    font-weight: bold;
-  }
-  .nav-pills .nav-link{
-    border-radius: 0px
-  }
-</style>

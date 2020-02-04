@@ -1,12 +1,19 @@
 <template>
-  <div>
+  <div class="white">
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
-        <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH NGHỀ</span></div>
+        <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH HÀNG</span></div>
         <v-spacer></v-spacer>
         <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
+        
       </div>
     </div>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn color="#0b72ba"  @click="$store.state.dialog = true">
+        <span style="color: white">Thêm mới</span>
+      </v-btn>
+    </v-card-actions>
     <v-data-table
       :headers="headers"
       :items="desserts"
@@ -17,6 +24,9 @@
     >
       <template v-slot:item.Id="{item}">
         {{desserts.indexOf(item) + 1}}
+      </template>
+      <template v-slot:item.descs="{item}">
+        <div v-if="item.desc != 'null'">{{item.desc}}</div>
       </template>
       <template v-slot:item.action="{item}">
         <v-icon
@@ -119,7 +129,7 @@
             value: 'Id',
           },
           { text: 'Tên ngành nghề', value: 'name' },
-          { text: 'Mô tả', value: 'desc' },
+          { text: 'Mô tả', value: 'descs' },
           { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         category: {},

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="white">
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>DANH CHI TIẾT NGÀNH HÀNG</span></div>
@@ -20,14 +20,17 @@
       </v-col> -->
       
     </v-row>
+    
     <v-card-actions class="my-1 mx-3">
-        <v-spacer></v-spacer>
-        <v-btn class="py-2" color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
-      </v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn class="py-2" color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
+    </v-card-actions>
+
     <v-data-table
       :headers="headers"
       :items="desserts"
-      :items-per-page="5"
+      :items-per-page="10"
+      no-data-text="Không có dữ liệu"
       class="elevation-1"
     >
       <template v-slot:item._id="{item}">
@@ -78,6 +81,8 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <!-- xoa -->
+    
   </div>
 </template>
 <script>

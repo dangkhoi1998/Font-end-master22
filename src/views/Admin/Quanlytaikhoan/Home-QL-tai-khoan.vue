@@ -11,7 +11,9 @@
       <v-data-table
         :headers="headers"
         :items="desserts"
-        :items-per-page="5"
+        :items-per-page="10"
+        no-data-text="Không có dữ liệu"
+        no-results-text="Không tìm thấy"
         :search="search"
         class="elevation-1"
       >
@@ -125,12 +127,6 @@
               </label>
               <v-combobox v-model="nhansu.role" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
             </v-col>
-            <!-- <v-col class="my-0 py-0 mt-2" cols="12">
-              <label class="my-0 py-0">Mặt hàng
-                <span style="color: red">(*)</span>
-              </label>
-              <v-combobox v-model="nhansu.category" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-combobox>
-            </v-col> -->
           </v-row>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -139,11 +135,44 @@
         </v-form>
       </v-card>
     </v-dialog>
+    <!-- xóa -->
+    <v-dialog v-model="dialog2" persistent max-width="500px">
+      <v-card>
+        <v-card-title style="background: #0b72ba; color: white;" class="headline">Bạn có chắc chẵn xóa?
+          <v-spacer></v-spacer>
+          <v-btn icon dark @click="dialog2 = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-card-title>
+        <v-simple-table class="mx-5">
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th class="text-left">Tên ngành nghề</th>
+                <th class="text-left">Mô tả</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <!-- <td>{{ category.name }}</td>
+                <td>{{ category.desc }}</td> -->
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="#0b72ba" style="color: white" @click="Delete()" > Xóa </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 <script>
   import { getregister } from '../../../api/GetApi/getApiAdmin'
   import { Putregister } from '../../../api/PutApi/PutAdminApi'
+  import { Deleteregister } from '../../../api/DeleteApi/DeleteAdminApi'
   import axios from 'axios'
   export default {
     data () {
@@ -159,6 +188,7 @@
           pass: ''
         },
         dialog1: false,
+        dialog2: false,
         headers: [
           {
             text: 'STT',
@@ -177,7 +207,6 @@
           { text: 'Số điện thoại', value: 'phone' },
           { text: 'Tên đăng nhập', value: 'user' },
           { text: 'Ngành nghề', value: 'role' },
-          // { text: 'Mặt hàng', value: 'iron' },
           { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         desserts: [],
@@ -203,14 +232,28 @@
         this.dialog1 = true
       },
       Editregister () {
-        console.log('ddddd', this.nhansu)
-        Putregisterr(this.nhansu)
+        Putregister(this.nhansu)
           .then(response => {
           })
-        // axios.put('http://192.168.1.250:17000/register', this.nhansu)
-        // Object.assign(this.desserts[this.editedIndex], this.nhansu)
+          .catch(error => {
+            console.log(error)
+          })
+        Object.assign(this.desserts[this.editedIndex], this.nhansu)
         this.dialog1 = false
-        //this.nhansu = {}
+        this.nhansu = {}
+      },
+      deleteItem (item) {
+        console.log(item)
+        this.nhansu = item
+        this.dialog2 = true
+      },
+      Delete () {
+        Deleteregister(this.nhansu)
+        .then(response => {
+          const index = this.desserts.indexOf(this.nhansu)
+          this.desserts.splice(index, 1)
+          this.dialog2 = false
+        })
       }
     }
   }
