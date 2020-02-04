@@ -19,6 +19,7 @@
           active-class="#6c757d white--text"
           style="text-decoration:none"
           no-action
+          v-model="item.active"
           :prepend-icon="item.action"
           >
           <template v-slot:activator >

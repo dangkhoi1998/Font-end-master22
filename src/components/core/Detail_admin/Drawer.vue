@@ -12,6 +12,7 @@ export default {
         to: "/admin/nganh-hang/",
         text: "Ngành hàng",
         icon: "dashboard",
+        active: true,
         items:[
           { title:"Chi tiết mặt hàng", to:"/admin/nganh-hang/",},
           { title:"Mặt hàng", to:"/admin/chi-tiet-nganh-hang/",}

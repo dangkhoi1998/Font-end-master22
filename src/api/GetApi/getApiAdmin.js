@@ -20,3 +20,10 @@ export function getregister () {
     method: 'get',
   })
 }
+
+export function getproduct () {
+  return request({
+    url: 'http://192.168.1.250:18002/product',
+    method: 'get',
+  })
+}

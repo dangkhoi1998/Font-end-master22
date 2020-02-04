@@ -180,16 +180,15 @@
       },
       deleteItem (item) {
         this.text = 'Xóa thông tin nguồn hàng'
-        this.source = Object.assign({}, item)
+        this.source = item
         this.dialog1 = true
       },
       Delete () {
         Deletesource(this.source)
           .then(response => {
-            this.dialog1 = false
-          })
-          const index = this.desserts.indexOf(this.source)
+            const index = this.desserts.indexOf(this.source)
             this.desserts.splice(index, 1)
+          })
       }
     }
   }
