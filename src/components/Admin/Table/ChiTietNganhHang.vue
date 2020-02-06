@@ -5,67 +5,77 @@
         <div class="background-triangle-big"> <span>CHI TIẾT NGÀNH HÀNG</span></div>
         {{select1}} {{select2}} {{select3}}
         <v-spacer></v-spacer>
-        <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
+        <v-btn  color="#0b72ba" text @click="Add()">
+          <v-icon size="40">mdi-plus-thick</v-icon>
+        </v-btn>
       </div>
     </div>
-    <v-row class="mx-3 mt-5">
-      <v-col cols="6" class="my-0 py-0">
+    <v-row class="mx-3 my-5">
+      <v-col cols="12" md="6" class="my-0 py-0">
         <v-combobox v-model="select" hide-details="auto" :items="items" item-text="name" item-value="id" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" label="Ngành hàng" filled></v-combobox>
       </v-col>
-      <!-- <v-col cols="6" class="my-0 py-0">
-        <v-combobox v-model="select11" hide-details="auto" clearable @click:clear="clearMessage" :items="items1" item-text="name" label="Ngành hàng 1" filled></v-combobox>
-      </v-col>     -->
+      <v-col cols="12" md="6" class="my-0 py-0">
+        <v-text-field class="py-0 my-0 "  v-model="search" append-icon="search" label="Tìm kiếm..." filled hide-details></v-text-field>
+      </v-col>
+      <!-- <v-col cols="12" md="2" class="my-0 py-0">
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn  color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
+        </v-card-actions>
+      </v-col> -->
     </v-row>
-    
-    <v-card-actions class="my-1 mx-3">
-      <v-spacer></v-spacer>
-      <v-btn class="py-2" color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
-    </v-card-actions>
 
     <v-data-table
       :headers="headers"
       :items="desserts"
+      :search="search"
       :items-per-page="10"
       no-data-text="Không có dữ liệu"
       class="elevation-1"
     >
     <template v-slot:body="{items}">
       <tbody>
-        <tr v-for="item in items" :key="item.source_name">
+        <tr v-for="item in items" :key="item.source_name" @contextmenu.prevent="show($event, item)">
           <td >{{desserts.indexOf(item) + 1}}</td>
           <td >{{item.name}}</td>
           <td >{{item.desc}}</td>
-          <td class="text-center">
-            <v-icon small class="mr-2" @click="Addtwo(item)">
-              mdi-plus-circle
-            </v-icon>
-            <v-icon
-              small
-              class="mr-2"
-              @click="editItem(item)"
-            >
-              edit
-            </v-icon>
-            <v-icon
-              small
-              @click="deleteItem(item)"
-            >
-              delete
-            </v-icon>
-            <v-icon
-              small
-              @click="ViewItem(item)"
-            >
-              mdi-play
-            </v-icon>
-          </td>
+          <v-menu
+            v-model="showMenu"
+            :position-x="x"
+            :position-y="y"
+            absolute
+            offset-y
+          >
+            <v-list>
+              <v-list-item @click="Addtwo()">
+                <v-list-item-title>
+                  <v-icon small class="mr-2" color="#0b72ba">mdi-plus-circle</v-icon>
+                  Thêm mới
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item @click="editItem()">
+                <v-list-item-title>
+                  <v-icon small class="mr-2">edit</v-icon>
+                  Sửa
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item @click="deleteItem(item)">
+                <v-list-item-title>
+                  <v-icon small class="mr-2" color="red">delete</v-icon>
+                  Xóa
+                </v-list-item-title>
+              </v-list-item>
+              <v-list-item @click="dialog1 = true">
+                <v-list-item-title>
+                  <v-icon small class="mr-2" >mdi-play</v-icon>
+                  Xem chi tiết
+                </v-list-item-title>
+              </v-list-item>
+            </v-list>
+          </v-menu>
         </tr>
       </tbody>
     </template>
-    <!-- <template v-slot:expanded-item="{ item }">
-      <td :colspan="10">
-      </td>
-    </template> -->
     <template v-slot:item.action="{item}">
       <v-icon small class="mr-2">
         mdi-plus-circle
@@ -89,7 +99,7 @@
     <v-dialog v-model="dialog" persistent max-width="450">
       <v-card>
         <v-card-title class="headline mb-4" style="background: #0b72ba">
-          <span style="color: white">Thêm mới nghành hàng 
+          <span style="color: white">{{text1}} 
           </span>
           <v-spacer></v-spacer>
           <v-btn icon dark @click="dialog = false">
@@ -115,7 +125,7 @@
           
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="#0b72ba" @click="AddItem()"><lable style="color: white">Lưu lại</lable></v-btn>
+          <v-btn color="#0b72ba" @click="AddItem1()"><lable style="color: white">Lưu lại</lable></v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -123,7 +133,7 @@
     <v-dialog v-model="dialog2" persistent max-width="450">
       <v-card>
         <v-card-title class="headline mb-4" style="background: #0b72ba">
-          <span style="color: white">Thêm mới nghành hàng 
+          <span style="color: white">{{text1}}
           </span>
           <v-spacer></v-spacer>
           <v-btn icon dark @click="dialog2 = false">
@@ -149,15 +159,22 @@
           
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="#0b72ba" @click="AddItem()"><lable style="color: white">Lưu lại</lable></v-btn>
+          <v-btn color="#0b72ba" @click="AddItem1()"><lable style="color: white">Lưu lại</lable></v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
     <!-- view -->
     <v-dialog v-model="dialog1" persistent max-width="700">
-      <v-card width="600" height="auto" class="mx-auto my-2">
-        {{category}}
-        <!-- <v-simple-table >
+      <v-card height="auto" class="mx-auto my-2">
+        <v-card-title class="headline" style="background: #0b72ba">
+          <span style="color: white">Chi tiết ngành hàng cấp 2 - {{ViewCategory.name}}
+          </span>
+          <v-spacer></v-spacer>
+          <v-btn icon dark @click="dialog1 = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-card-title>
+        <v-simple-table >
           <template v-slot:default>
             <thead>
               <tr>
@@ -168,21 +185,21 @@
               </tr>
             </thead>
             <tbody v-for="(index, i) in list" :key="index.name">
-              <tr v-if="item.name === index.parent">
-                <td ><v-icon class="mx-0 px-0 ">mdi-play</v-icon></td>
+              <tr v-if="ViewCategory.name === index.parent" >
+                <td ><v-icon class="mx-0 px-0" color="#0b72ba">mdi-play</v-icon></td>
                 <td class="text-left">{{ index.name }}</td>
                 <td>{{ index.desc }}</td>
-                <td>
+                <td class="text-center" >
                   <v-icon
                     small
                     class="mr-2"
-                    @click="editItem(item)"
+                    @click="editMin(index)"
                   >
                     edit
                   </v-icon>
                   <v-icon
                     small
-                    @click="deleteItem(item)"
+                    @click="deleteItem(index)"
                   >
                     delete
                   </v-icon>
@@ -190,7 +207,7 @@
               </tr>
             </tbody>
           </template>
-        </v-simple-table> -->
+        </v-simple-table>
       </v-card>
     </v-dialog>
   </div>
@@ -218,14 +235,18 @@ export default {
     category: {
       parent: ''
     },
+    text1: '',
+    ViewCategory: {},
     name: '',
     headers: [
-      { text: 'STT', value: 'stt' },
+      { text: 'STT', value: 'stt', sortable: false, },
       { text: 'Tên ngành hàng', value: 'name' },
-      { text: 'Mô tả', value: 'desc' },
-      { text: 'Actions', value: 'action', sortable: false, align: 'center', },
+      { text: 'Mô tả', value: 'desc' }
     ],
-    desserts: []
+    desserts: [],
+    showMenu: false,
+    x: 0,
+    y: 0,
   }),
   created () {
     this.listCategory()
@@ -238,49 +259,77 @@ export default {
             this.desserts = this.list
           })
       },
-    editItem (item) {
-      this.editedIndex = this.desserts.indexOf(item)
-      this.category = Object.assign({}, item)
+    editItem () {
+      this.editedIndex = this.desserts.indexOf(this.ViewCategory)
+      this.category = Object.assign({}, this.ViewCategory)
+      this.text1 = 'Sửa ngành hàng'
       this.dialog = true
+    },
+    editMin (item) {
+      this.editedIndex = 0
+      this.category = Object.assign({}, item)
+      this.text1 = 'Sửa'
+      this.dialog1 = false
+      this.dialog2 = true
     },
     Add () {
       this.category = {}
+      this.ViewCategory = -1
+      this.text1 = 'Thêm mới ngành hàng'
       this.dialog = true
     },
-    AddItem () {
+    AddItem1 () {
+      console.log('this.editedIndex', this.editedIndex)
       if(this.editedIndex > -1) {
         Putcategory(this.category)
           .then(reponse => {
-            Object.assign(this.desserts[this.editedIndex], this.category)
-            this.category = {}
+            // Object.assign(this.desserts[this.editedIndex], this.category)
+            this.dialog2 = false
           })
           .catch(error => {
             console.log(error)
           }) 
         this.dialog = false
       } else {
-        this
-        // this.category.parent = this.
+        this.category.parent = this.select.name
+        this.category.parent = this.name
         Postcategory(this.category)
           .then(reponse => {
             this.desserts.push(this.category)
+            this.dialog = false
+            this.dialog2 = false
           })
           .catch(error => {
             console.log(error)
           })
       }
+      console.log('caaaa', this.category)
     },
-    ViewItem(item) {
-      this.category = item
-    },
-    Addtwo (item) {
-      this.name = item['name']
+    Addtwo () {
+      this.name = this.ViewCategory.name
       this.category={}
+      this.text1 = 'Thêm mới '
+      this.editedIndex = -1
       this.dialog2 = true
     },
     clearMessage () {
       this.items1 = []
-    }
+    },
+    show (e, item) {
+      e.preventDefault()
+      this.showMenu = false
+      this.x = e.clientX
+      this.y = e.clientY
+      this.$nextTick(() => {
+        // thêm mới cấp 1
+        this.ViewCategory = item
+        // sửa thằng cấp 1
+        // this.editedIndex = this.desserts.indexOf(item)
+        // this.category = Object.assign({}, item)
+        // 
+        this.showMenu = true
+      })
+    },
   },
   computed: {
     select1 () {
@@ -288,7 +337,7 @@ export default {
       const data = []
       for( const i in mappedComments) {
         if(mappedComments[i]['parent'] === 'null') {
-          this.select = mappedComments[0]
+          this.select = Object.assign({}, mappedComments[0]);
           const copy = Object.assign({}, mappedComments[i]);
           data.push(copy);
           this.items = data
@@ -319,20 +368,12 @@ export default {
           this.desserts = this.items2
         }
       }
-    }
+    },
   },
-  watch: {
-    
-  }
 }
 </script> 
 <style scoped>
-  /* td{
-    border: 0px !important;
-    border-bottom: 1px solid #d7d7d7 !important; 
+  .container{
+    width: 70% !important;
   }
-  th{
-    border: 0px !important;
-    border-bottom: 1px solid #d7d7d7 !important; 
-  } */
 </style>

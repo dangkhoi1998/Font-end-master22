@@ -20,7 +20,7 @@
   }
 </script>
  <style>
-  .container .lighten-3 {
+  /* .container .lighten-3 {
     width: 100%!important;
-  } 
+  }  */
 </style>
