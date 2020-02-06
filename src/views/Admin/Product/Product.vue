@@ -6,8 +6,8 @@
       </v-col>
       <v-col cols="12" md="9" style="color: black">
         <p class="font-weight-medium mb-1">Tiêu đề ban đầu:</p>
-        <p class="font-weight-medium mb-1">LEHUAMAO Lông mi chồn 3D Lông mi chồn dày HandMade Full Dải Lashes Cruelty Free Lashes 13 Kiểu lông mi giả Trang điểm</p>
-        <p class="mb-1">Bởi:</p>
+        <p class="font-weight-medium mb-1">{{lisProduct.title.suppler_title}}</p>
+        <p class="mb-1">Bởi:{{lisProduct.title}}</p>
         <label class="mb-1">Thay đổi tiều để:</label>
         <v-text-field placeholder="Thay đổi tiêu đề" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" filled dense hide-details="auto"></v-text-field>
         <label class="mb-1 mt-2">Bộ sưu tập:</label>
@@ -26,3 +26,16 @@
     </v-row>
   </div>
 </template>
+<script>
+export default {
+  data: () => {
+  },
+  props: {
+    lisProduct: {
+      require: true,
+      type: [Array,Object],
+      default: null
+    },
+  }
+}
+</script>

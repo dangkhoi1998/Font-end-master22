@@ -7,9 +7,10 @@
         <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
       </div>
     </div>
+    {{selected}}
     <v-row class="mx-0 px-0 my-0 py-0">
       <v-btn class="font-weight-regular text-none" outlined @click="checkBtn()" color="teal" tile>
-        <v-checkbox v-model="checkItem" class="px-0 py-0 mx-0 my-0 mt-2 "></v-checkbox>
+        <v-checkbox v-model="checkItem" @click="checkBtn()" class="px-0 py-0 mx-0 my-0 mt-2 "></v-checkbox>
         <span class="mb-3">{{TextProduct}}</span>
       </v-btn>
       <div v-if="checkItem === false" class="mt-5"></div>
@@ -22,7 +23,7 @@
         </v-btn>
       </div>
     </v-row>
-    <v-card color="basil" class="mb-5" v-for="item in 3" :key="item">
+    <v-card color="basil" class="mb-5" v-for="(index, i) in product" :key="i">
       <v-tabs
         v-model="tab"
         background-color="transparent"
@@ -30,7 +31,7 @@
         
       >
         <div style="width: 68px; background: #f9fafb;">
-          <v-checkbox class="ml-5 px-0 py-0"></v-checkbox>
+          <v-checkbox v-model="selected" class="ml-5 px-0 py-0" :value="index"></v-checkbox>
         </div>
         <v-tab
           v-for="item in items"
@@ -76,7 +77,7 @@
             flat
           >
             <v-card-text>
-              <product></product>
+              <product :lisProduct="index"></product>
             </v-card-text>
           </v-card>
         </v-tab-item>
@@ -116,8 +117,10 @@
     data () {
       return {
         tab: null,
+        selected: [],
         search: '',
         checkItem: false,
+        check: '',
         index: '',
         TextProduct: '',
         items: [
@@ -148,8 +151,10 @@
         this.checkItem =! this.checkItem
         if(this.checkItem === true) {
           this.TextProduct = this.index + ' sản phẩm đã được chọn'
+          this.selected = this.product
         } else {
           this.TextProduct = 'Hiển thị ' + this.index + ' sản phẩm'
+          this.selected = {}
         }
       }
     }

@@ -2,7 +2,7 @@
   <div class="white">
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
-        <div class="background-triangle-big"> <span>DANH SÁCH NGÀNH HÀNG</span></div>
+        <div class="background-triangle-big"> <span>TỔNG QUAN NGÀNH HÀNG</span></div>
         <v-spacer></v-spacer>
         <v-text-field class="py-0 my-0 mr-4 mt-1"  v-model="search" append-icon="search" label="Tìm kiếm..." single-line hide-details></v-text-field>
         
@@ -22,26 +22,36 @@
       no-data-text="Không có dữ liệu"
       class="elevation-1"
     >
-      <template v-slot:item.Id="{item}">
-        {{desserts.indexOf(item) + 1}}
-      </template>
-      <template v-slot:item.descs="{item}">
-        <div v-if="item.desc != 'null'">{{item.desc}}</div>
-      </template>
-      <template v-slot:item.action="{item}">
-        <v-icon
-          small
-          class="mr-2"
-          @click="editItem(item)"
-        >
-          edit
-        </v-icon>
-        <v-icon
-          small
-          @click="deleteItem(item)"
-        >
-          delete
-        </v-icon>
+      <template v-slot:body="{items}">
+        <tbody>
+          <tr v-for="item in items" :key="item.source_name" @contextmenu.prevent="show($event, item)">
+            <td>{{desserts.indexOf(item) + 1}}</td>
+            <td>{{item.name}}</td>
+            <td >{{item.desc}}</td>
+            <v-menu
+              v-model="showMenu"
+              :position-x="x"
+              :position-y="y"
+              absolute
+              offset-y
+            >
+              <v-list>
+                <v-list-item @click="editItem()">
+                  <v-list-item-title>
+                    <v-icon small class="mr-2" >edit</v-icon>
+                    Sửa
+                  </v-list-item-title>
+                </v-list-item>
+                <v-list-item @click="deleteItem()">
+                  <v-list-item-title>
+                    <v-icon small class="mr-2" >delete</v-icon>
+                    Xóa
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+          </tr>
+        </tbody>
       </template>
     </v-data-table>
     <!-- Them moi nganh hang -->
@@ -128,9 +138,8 @@
             sortable: false,
             value: 'Id',
           },
-          { text: 'Tên ngành nghề', value: 'name' },
-          { text: 'Mô tả', value: 'descs' },
-          { text: 'Actions', value: 'action', sortable: false, align: 'center', },
+          { text: 'Tên ngành nghề', value: 'name', align: 'center', },
+          { text: 'Mô tả', value: 'descs', align: 'center', },
         ],
         category: {},
         desserts: [
@@ -140,6 +149,9 @@
           { text: 'Audience', icon: 'mdi-account' },
           { text: 'Conversions', icon: 'mdi-flag' },
         ],
+        showMenu: false,
+        x: 0,
+        y: 0,
       }
     },
     computed: {
@@ -161,8 +173,8 @@
         this.$store.state.dialog = false
       },
       editItem (item) {
-        this.editedIndex = this.desserts.indexOf(item)
-        this.category = Object.assign({}, item)
+        // this.editedIndex = this.desserts.indexOf(item)
+        // this.category = Object.assign({}, item)
         this.$store.state.dialog = true
       },
       AddItem () {
@@ -186,8 +198,7 @@
         }
         this.Back()
       },
-      deleteItem (item) {
-        this.category = item
+      deleteItem () {
         this.dialog1 = true
       },
       Delete () {
@@ -200,7 +211,19 @@
           .catch(error => {
             console.log(error)
           })
-      }
+      },
+      show (e, item) {
+        console.log(item['id'])
+        e.preventDefault()
+        this.showMenu = false
+        this.x = e.clientX
+        this.y = e.clientY
+        this.$nextTick(() => {
+          this.editedIndex = this.desserts.indexOf(item)
+          this.category = Object.assign({}, item)
+          this.showMenu = true
+        })
+      },
     }
   }
 </script>

@@ -22,24 +22,43 @@
           no-results-text="Không tìm thấy"
           class="elevation-1"
         >
-          <template v-slot:item.stt="{item}">
-            {{desserts.indexOf(item) + 1}}
+          <template v-slot:body="{items}">
+            <tbody>
+              <tr v-for="item in items" :key="item.source_name">
+                <td >{{desserts.indexOf(item) + 1}}</td>
+                <td class="text-center">{{item.source_name}}</td>
+                <td class="text-center">
+                  <v-icon
+                      small
+                      class="mr-2"
+                      @click="editItem(item)"
+                    >
+                      edit
+                    </v-icon>
+                    <v-icon
+                      small
+                      @click="deleteItem(item)"
+                    >
+                      delete
+                    </v-icon>
+                    <!-- <v-menu
+                      v-model="showMenu"
+                      :position-x="x"
+                      :position-y="y"
+                      absolute
+                      offset-y
+                    >
+                      <v-list>
+                        <v-list-item @click="editItem()">
+                          <v-list-item-title>Sửa</v-list-item-title>
+                        </v-list-item>
+                      </v-list>
+                    </v-menu> -->
+                </td>
+              </tr>
+            </tbody>
           </template>
-          <template v-slot:item.action="{item}">
-            <v-icon
-              small
-              class="mr-2"
-              @click="editItem(item)"
-            >
-              edit
-            </v-icon>
-            <v-icon
-              small
-              @click="deleteItem(item)"
-            >
-              delete
-            </v-icon>
-          </template>
+  
         </v-data-table>
       </v-card>
     </v-card>
@@ -60,7 +79,7 @@
             <label class="my-0 py-0">Nguồn hàng
               <span style="color: red">(*)</span>
             </label>
-            <v-text-field v-model="source.source_name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
+            <v-text-field  v-model="source.source_name" placeholder="Tên" color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" hide-details="auto" required outlined dense></v-text-field>
           </v-col>
           <v-card-actions>
             <v-spacer></v-spacer>
@@ -132,6 +151,9 @@
           { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         desserts: [],
+        // showMenu: false,
+        // x: 0,
+        // y: 0,
       }
     },
     created () {
@@ -149,11 +171,13 @@
         this.dialog = true
         this.text = 'Thêm mới nguồn hàng'
       },
-      editItem (item) {
-        this.editedItem = this.desserts.indexOf(item)
-        this.source = Object.assign({}, item)
-        this.text = 'Sửa thông tin nguồn hàng'
-        this.dialog = true
+      editItem (text, data) {
+         console.log('Têxt', text)
+        console.log('dddddd', data)
+        // this.editedItem = this.desserts.indexOf(item)
+        // this.source = Object.assign({}, item)
+        // this.text = 'Sửa thông tin nguồn hàng'
+        // this.dialog = true
       },
       Save () {
         if(this.editedItem > -1) {
@@ -189,13 +213,24 @@
             const index = this.desserts.indexOf(this.source)
             this.desserts.splice(index, 1)
           })
-      }
+      },
+      // show (e, data) {
+      //   console.log('đssssssssssssssss', data)
+      //   e.preventDefault()
+      //   this.showMenu = false
+      //   this.x = e.clientX
+      //   this.y = e.clientY
+      //   this.$nextTick(() => {
+      //     this.showMenu = true
+      //   })
+      // },
     }
   }
 </script>
-<style>
-  td:nth-child(1) {
-    width: 50px;
-    text-align: center ! important;
-  }
+<style scoped>
+  .portrait.v-card {
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
 </style>

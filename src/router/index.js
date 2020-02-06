@@ -11,6 +11,7 @@ import Product from '../views/Admin/Product/DetailProduct'
 import ListProduct from '../views/Admin/Product/ListProduct'
 import Settings from '../views/Admin/Settings/DetailSetting'
 import Source from '../components/Admin/Settings/Source'
+import test from '../components/Admin/test'
  
 Vue.use(Router)
 
@@ -63,6 +64,10 @@ export default new Router({
           children: [
             { path: 'source', name: 'Source', component: Source }
           ]
+        },
+        { path: 'test',
+          name: 'test', 
+          component: test,
         },
       ]
     }      
