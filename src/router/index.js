@@ -4,8 +4,8 @@ import DetailLogin from '../Login/Detail_Login'
 import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
 import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
-import NghanhNghe from '../components/Admin/Table/NganhNghe'
-import ChitietNN from '../components/Admin/Table/ChiTietNganhHang'
+import Tong_quan_nganh_hang from '../components/Admin/Category/Tong_quan_nganh_hang'
+import ChitietNN from '../components/Admin/Category/ChiTietNganhHang'
 import QLTK from '../views/Admin/Quanlytaikhoan/Home-QL-tai-khoan'
 import Product from '../views/Admin/Product/DetailProduct'
 import ListProduct from '../views/Admin/Product/ListProduct'
@@ -38,7 +38,7 @@ export default new Router({
             {
               path: 'nganh-hang',
               name: 'Nghành nghề',
-              component: NghanhNghe,
+              component: Tong_quan_nganh_hang,
              },
             {
               path: 'chi-tiet-nganh-hang',

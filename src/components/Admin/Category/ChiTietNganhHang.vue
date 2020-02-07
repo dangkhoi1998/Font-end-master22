@@ -3,7 +3,7 @@
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>CHI TIẾT NGÀNH HÀNG</span></div>
-        {{select1}} {{select2}} {{select3}}
+        {{select1}} {{select2}} 
         <v-spacer></v-spacer>
         <v-btn  color="#0b72ba" text @click="Add()">
           <v-icon size="40">mdi-plus-thick</v-icon>
@@ -17,12 +17,6 @@
       <v-col cols="12" md="6" class="my-0 py-0">
         <v-text-field class="py-0 my-0 "  v-model="search" append-icon="search" label="Tìm kiếm..." filled hide-details></v-text-field>
       </v-col>
-      <!-- <v-col cols="12" md="2" class="my-0 py-0">
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn  color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
-        </v-card-actions>
-      </v-col> -->
     </v-row>
 
     <v-data-table
@@ -89,7 +83,7 @@
       </v-icon>
       <v-icon
         small
-        @click="deleteItem(item)"
+        @click="deleteItem1(item)"
       >
         delete
       </v-icon>
@@ -107,12 +101,12 @@
           </v-btn>
         </v-card-title>
         <v-col class="my-0 py-0">
-          <label class="my-0 py-0 font-weight-bold">Cha
+          <label class="my-0 py-0 font-weight-bold">Ngành hàng
             <span style="color: red">(*)</span>
           </label>
           <v-combobox v-model="select" hide-details="auto" :items="items" item-text="name" item-value="id" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" filled dense></v-combobox>
 
-          <label class=" mt-3 my-0 py-0 font-weight-bold">Ngành hàng
+          <label class=" mt-3 my-0 py-0 font-weight-bold">Sản phẩm
             <span style="color: red">(*)</span>
           </label>
           <v-text-field v-model="category.name"  color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" filled dense hide-details="auto"></v-text-field>
@@ -141,17 +135,17 @@
           </v-btn>
         </v-card-title>
         <v-col class="my-0 py-0"> 
-          <label class="my-0 py-0 font-weight-bold">Cha
+          <!-- <label class="my-0 py-0 font-weight-bold">Cha
             <span style="color: red">(*)</span>
           </label>
-          <v-text-field disabled v-model="name"  color="deep-purple"  filled dense hide-details="auto"></v-text-field>
+          <v-text-field disabled v-model="ViewCategory.name"  color="deep-purple"  filled dense hide-details="auto"></v-text-field> -->
 
-          <label class=" mt-3 my-0 py-0 font-weight-bold">Ngành hàng
+          <label class=" mt-3 my-0 py-0 font-weight-bold">Sản phẩm
             <span style="color: red">(*)</span>
           </label>
           <v-text-field v-model="category.name"  color="deep-purple" :rules="[v => !!v || 'Thông tin bắt buộc ' ]" filled dense hide-details="auto"></v-text-field>
 
-          <label class=" mt-3 my-0 py-0 font-weight-bold" >Mô tả nghành hàng 
+          <label class=" mt-3 my-0 py-0 font-weight-bold" >Mô tả sản phẩm
             <span style="color: red">(*)</span>
           </label>
           <v-textarea v-model="category.desc" filled name="input-7-4" rows="2"></v-textarea>
@@ -167,7 +161,7 @@
     <v-dialog v-model="dialog1" persistent max-width="700">
       <v-card height="auto" class="mx-auto my-2">
         <v-card-title class="headline" style="background: #0b72ba">
-          <span style="color: white">Chi tiết ngành hàng cấp 2 - {{ViewCategory.name}}
+          <span style="color: white">Chi tiết sản phẩm - {{ViewCategory.name}}
           </span>
           <v-spacer></v-spacer>
           <v-btn icon dark @click="dialog1 = false">
@@ -184,12 +178,12 @@
                 <th class="text-center">Actions</th>
               </tr>
             </thead>
-            <tbody v-for="(index, i) in list" :key="index.name">
-              <tr v-if="ViewCategory.name === index.parent" >
-                <td ><v-icon class="mx-0 px-0" color="#0b72ba">mdi-play</v-icon></td>
-                <td class="text-left">{{ index.name }}</td>
-                <td>{{ index.desc }}</td>
-                <td class="text-center" >
+            <tbody v-for="index in list" :key="index.name">
+              <tr v-for="item in index.parent_id" :key="item.id">
+                <td v-if="ViewCategory.name === item"><v-icon class="mx-0 px-0" color="#0b72ba">mdi-play</v-icon></td>
+                <td v-if="ViewCategory.name === item" class="text-left">{{ index.name }}</td>
+                <td v-if="ViewCategory.name === item">{{ index.desc }}</td>
+                <td v-if="ViewCategory.name === item" class="text-center" >
                   <v-icon
                     small
                     class="mr-2"
@@ -199,7 +193,7 @@
                   </v-icon>
                   <v-icon
                     small
-                    @click="deleteItem(index)"
+                    @click="deleteMin(index)"
                   >
                     delete
                   </v-icon>
@@ -210,6 +204,8 @@
         </v-simple-table>
       </v-card>
     </v-dialog>
+    <!--  -->
+    <app-snackbar></app-snackbar>
   </div>
 </template>
 <script>
@@ -222,7 +218,7 @@ export default {
   data: () => ({
     items: [],
     items1: [],
-    items2: [],
+    items2: {},
     editedIndex: -1,
     select: {},
     select11: { name: ''},
@@ -233,7 +229,7 @@ export default {
     dialog2: false,
     dialog1: false,
     category: {
-      parent: ''
+      parent_id: ''
     },
     text1: '',
     ViewCategory: {},
@@ -268,7 +264,8 @@ export default {
     editMin (item) {
       this.editedIndex = 0
       this.category = Object.assign({}, item)
-      this.text1 = 'Sửa'
+      this.ViewCategory = this.category
+      this.text1 = 'Sửa thông tin sản phẩm'
       this.dialog1 = false
       this.dialog2 = true
     },
@@ -279,11 +276,10 @@ export default {
       this.dialog = true
     },
     AddItem1 () {
-      console.log('this.editedIndex', this.editedIndex)
       if(this.editedIndex > -1) {
         Putcategory(this.category)
           .then(reponse => {
-            // Object.assign(this.desserts[this.editedIndex], this.category)
+            this.listCategory()
             this.dialog2 = false
           })
           .catch(error => {
@@ -291,11 +287,12 @@ export default {
           }) 
         this.dialog = false
       } else {
-        this.category.parent = this.select.name
-        this.category.parent = this.name
+        this.category.parent_id = this.select.id
+        this.category.parent_id = this.ViewCategory.id
+        console.log(this.category)
         Postcategory(this.category)
           .then(reponse => {
-            this.desserts.push(this.category)
+            this.listCategory()
             this.dialog = false
             this.dialog2 = false
           })
@@ -303,11 +300,9 @@ export default {
             console.log(error)
           })
       }
-      console.log('caaaa', this.category)
     },
     Addtwo () {
-      this.name = this.ViewCategory.name
-      this.category={}
+      this.category= {}
       this.text1 = 'Thêm mới '
       this.editedIndex = -1
       this.dialog2 = true
@@ -316,32 +311,51 @@ export default {
       this.items1 = []
     },
     show (e, item) {
+      this.text1 = ''
       e.preventDefault()
       this.showMenu = false
       this.x = e.clientX
       this.y = e.clientY
       this.$nextTick(() => {
-        // thêm mới cấp 1
         this.ViewCategory = item
-        // sửa thằng cấp 1
-        // this.editedIndex = this.desserts.indexOf(item)
-        // this.category = Object.assign({}, item)
-        // 
         this.showMenu = true
       })
     },
+    deleteItem () {
+      for(const i in this.list) {
+        for(const j in this.list[i]['parent_id']) {
+          if(this.ViewCategory.id === this.list[i]['parent_id'][j]) {
+            this.text1 = this.list[i]['name']
+          }
+        }
+      }
+      if(this.text1 === '') {
+        Deletecategory(this.select.id, this.ViewCategory.id)
+          .then(reponse => {
+            console.log(reponse)
+            this.listCategory()
+          })
+      } else {
+        alert('Bạn không thể xóa được!')
+      }
+    },
+    deleteMin (item) {
+      Deletecategory(this.ViewCategory.id, item['id'])
+        .then(reponse => {
+          console.log(reponse)
+        })
+    }
+  },
+  watch: {
+
   },
   computed: {
     select1 () {
       const mappedComments = this.list
-      const data = []
       for( const i in mappedComments) {
-        if(mappedComments[i]['parent'] === 'null') {
-          this.select = Object.assign({}, mappedComments[0]);
-          const copy = Object.assign({}, mappedComments[i]);
-          data.push(copy);
-          this.items = data
-          this.desserts = this.items
+        if(mappedComments[i]['parent_id'] === null) {
+          this.select = Object.assign({}, mappedComments[0])
+          this.items.push(Object.assign({}, mappedComments[i]))
         }
       }
     },
@@ -349,23 +363,12 @@ export default {
       const mappedComments = this.list
       const data = []
       for ( const i in mappedComments) {
-        if( this.select.name === mappedComments[i]['parent']) {
-          const copy = Object.assign({}, mappedComments[i]);
-          data.push(copy);
-          this.items1 = data
-          this.desserts = this.items1
-        }
-      }
-    },
-    select3 () {
-      const mappedComments = this.list
-      const data = []
-      for ( const i in mappedComments) {
-        if( this.select11.name === mappedComments[i]['parent']) {
-          const copy = Object.assign({}, mappedComments[i]);
-          data.push(copy);
-          this.items2 = data
-          this.desserts = this.items2
+        for ( const j in mappedComments[i]['parent_id']) {
+          if(this.select.id === mappedComments[i]['parent_id'][j]) {
+            const copy = Object.assign({}, mappedComments[i]);
+            data.push(copy);
+            this.desserts = data
+          }
         }
       }
     },

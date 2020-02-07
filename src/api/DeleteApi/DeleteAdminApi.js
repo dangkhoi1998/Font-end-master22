@@ -1,8 +1,8 @@
 import request from '../../util/request'
 
-export function Deletecategory (item) {
+export function Deletecategory (father, children) {
   return request({
-    url: `http://192.168.1.250:18000/category/${item.id}`,
+    url: `http://192.168.1.250:18000/category/${father}/${children}`,
     method: 'delete',
   })
 }

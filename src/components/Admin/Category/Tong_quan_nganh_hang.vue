@@ -10,7 +10,7 @@
     </div>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="#0b72ba"  @click="$store.state.dialog = true">
+      <v-btn color="#0b72ba"  @click="Add()">
         <span style="color: white">Thêm mới</span>
       </v-btn>
     </v-card-actions>
@@ -38,16 +38,16 @@
               <v-list>
                 <v-list-item @click="editItem()">
                   <v-list-item-title>
-                    <v-icon small class="mr-2" >edit</v-icon>
+                    <v-icon small class="mr-2" color="blue" >edit</v-icon>
                     Sửa
                   </v-list-item-title>
                 </v-list-item>
-                <v-list-item @click="deleteItem()">
+                <!-- <v-list-item @click="deleteItem()">
                   <v-list-item-title>
                     <v-icon small class="mr-2" >delete</v-icon>
                     Xóa
                   </v-list-item-title>
-                </v-list-item>
+                </v-list-item> -->
               </v-list>
             </v-menu>
           </tr>
@@ -86,51 +86,20 @@
       </v-form>
     </v-dialog>
     <!-- xóa categroy -->
-    <v-dialog v-model="dialog1" persistent max-width="500px">
-      <v-card>
-        <v-card-title style="background: #0b72ba; color: white;" class="headline">Bạn có chắc chẵn xóa?
-          <v-spacer></v-spacer>
-          <v-btn icon dark @click="dialog1 = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-card-title>
-        <v-simple-table class="mx-5">
-          <template v-slot:default>
-            <thead>
-              <tr>
-                <th class="text-left">Tên ngành nghề</th>
-                <th class="text-left">Mô tả</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{{ category.name }}</td>
-                <td>{{ category.desc }}</td>
-              </tr>
-            </tbody>
-          </template>
-        </v-simple-table>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="#0b72ba" style="color: white" @click="Delete()" > Xóa </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </div>
 </template>
 <script>
   import { getcategory } from '../../../api/GetApi/getApiAdmin'
   import { Postcategory } from '../../../api/PostApi/PostApiAdmin'
   import { Putcategory} from '../../../api/PutApi/PutAdminApi'
-  import { Deletecategory } from '../../../api/DeleteApi/DeleteAdminApi'
   export default {
     data () {
       return {
         search: '',
         valid: false,
+        dialog: false,
         editedIndex: -1,
-        dialog1: false,
+        
         headers: [
           {
             text: 'STT',
@@ -154,11 +123,6 @@
         y: 0,
       }
     },
-    computed: {
-      dialog () {
-        return this.$store.state.dialog
-      }
-    },
     created () {
       this.listCategory()
     },
@@ -169,13 +133,17 @@
             this.desserts = response.data
           })
       },
+      Add () {
+        this.category = {}
+        this.dialog = true
+      },
       Back () {
-        this.$store.state.dialog = false
+        this.dialog = false
       },
       editItem (item) {
         // this.editedIndex = this.desserts.indexOf(item)
         // this.category = Object.assign({}, item)
-        this.$store.state.dialog = true
+        this.dialog = true
       },
       AddItem () {
         if(this.editedIndex > -1) {
@@ -197,20 +165,6 @@
             })
         }
         this.Back()
-      },
-      deleteItem () {
-        this.dialog1 = true
-      },
-      Delete () {
-        Deletecategory(this.category)
-          .then(reponse => {
-            const index = this.desserts.indexOf(this.category)
-            this.desserts.splice(this.category, 1)
-            this.dialog1 = false
-          })
-          .catch(error => {
-            console.log(error)
-          })
       },
       show (e, item) {
         console.log(item['id'])

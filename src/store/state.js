@@ -3,6 +3,7 @@
 export default {
   dialog: false,
   snackbar1: false,
+  snackbar: false,
   text1: '',
 }
 

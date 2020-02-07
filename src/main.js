@@ -8,12 +8,14 @@ import vuetify from './plugins/vuetify'
 import { sync } from 'vuex-router-sync'
 import BootstrapVue from 'bootstrap-vue'
 import datetimePicker from '@/views/DatetimePicker'
+import appSnackbar from './components/Snackbar'
 
 Vue.use(BootstrapVue)
 sync(store, router)
 Vue.use(datetimePicker)
 
 Vue.component(datetimePicker.name, datetimePicker)
+Vue.component(appSnackbar.name, appSnackbar)
 Vue.config.productionTip = false
 
 new Vue({

@@ -172,18 +172,15 @@
         this.text = 'Thêm mới nguồn hàng'
       },
       editItem (text, data) {
-         console.log('Têxt', text)
+        console.log('Têxt', text)
         console.log('dddddd', data)
-        // this.editedItem = this.desserts.indexOf(item)
-        // this.source = Object.assign({}, item)
-        // this.text = 'Sửa thông tin nguồn hàng'
-        // this.dialog = true
       },
       Save () {
         if(this.editedItem > -1) {
           Putsource(this.source)
             .then(response => {
-              Object.assign(this.desserts[this.editedItem], this.source)
+              this.listsource()
+              //Object.assign(this.desserts[this.editedItem], this.source)
               this.dialog = false
             })
             .catch(error => {
@@ -192,7 +189,8 @@
         } else {
           Postsource(this.source)
             .then(response => {
-              this.desserts.push(this.source)
+              this.listsource()
+              //this.desserts.push(this.source)
               console.log(response)
               this.dialog = false
               this.source = {}
@@ -210,9 +208,9 @@
       Delete () {
         Deletesource(this.source)
           .then(response => {
-            const index = this.desserts.indexOf(this.source)
-            this.desserts.splice(index, 1)
+            this.listsource()
           })
+        this.dialog1 = false
       },
       // show (e, data) {
       //   console.log('đssssssssssssssss', data)
