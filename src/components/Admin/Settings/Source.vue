@@ -8,7 +8,7 @@
       </div>
     </div>
     <v-card class="my-0 py-0">
-      <v-card width="700" class="mx-auto my-0 py-0">
+      <v-card class="mx-auto my-0 py-0">
         <v-card-actions class="mx-3">
           <v-spacer></v-spacer>
           <v-btn class="py-2" color="#0b72ba" @click="Add()"><span style="color: white;">Thêm mới</span></v-btn>
@@ -41,19 +41,6 @@
                     >
                       delete
                     </v-icon>
-                    <!-- <v-menu
-                      v-model="showMenu"
-                      :position-x="x"
-                      :position-y="y"
-                      absolute
-                      offset-y
-                    >
-                      <v-list>
-                        <v-list-item @click="editItem()">
-                          <v-list-item-title>Sửa</v-list-item-title>
-                        </v-list-item>
-                      </v-list>
-                    </v-menu> -->
                 </td>
               </tr>
             </tbody>
@@ -137,7 +124,7 @@
         dialog: false,
         dialog1: false,
         valid: false,
-        editedIndex: -1,
+        editedItem: -1,
         source: {},
         text: '',
         headers: [
@@ -151,13 +138,15 @@
           { text: 'Actions', value: 'action', sortable: false, align: 'center', },
         ],
         desserts: [],
-        // showMenu: false,
-        // x: 0,
-        // y: 0,
       }
     },
     created () {
       this.listsource()
+    },
+    computed: {
+      Source () {
+        return this.$store.state.Source
+      }
     },
     methods: {
       listsource () {
@@ -168,19 +157,20 @@
       },
       Add () {
         this.source = {}
+        this.editedItem = -2
         this.dialog = true
         this.text = 'Thêm mới nguồn hàng'
       },
-      editItem (text, data) {
-        console.log('Têxt', text)
-        console.log('dddddd', data)
+      editItem (item) {
+        this.editedItem = 0
+        this.source = {...item}
+        this.dialog = true
       },
       Save () {
-        if(this.editedItem > -1) {
+        if(this.editedItem === 0) {
           Putsource(this.source)
             .then(response => {
               this.listsource()
-              //Object.assign(this.desserts[this.editedItem], this.source)
               this.dialog = false
             })
             .catch(error => {
@@ -190,10 +180,7 @@
           Postsource(this.source)
             .then(response => {
               this.listsource()
-              //this.desserts.push(this.source)
-              console.log(response)
               this.dialog = false
-              this.source = {}
             })
             .catch(error => {
               console.log(error)
@@ -212,23 +199,16 @@
           })
         this.dialog1 = false
       },
-      // show (e, data) {
-      //   console.log('đssssssssssssssss', data)
-      //   e.preventDefault()
-      //   this.showMenu = false
-      //   this.x = e.clientX
-      //   this.y = e.clientY
-      //   this.$nextTick(() => {
-      //     this.showMenu = true
-      //   })
-      // },
     }
   }
 </script>
 <style scoped>
   .portrait.v-card {
-  margin: 0 auto;
-  max-width: 600px;
-  width: 100%;
-}
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+  .container{
+    width: 40% !important;
+  }
 </style>

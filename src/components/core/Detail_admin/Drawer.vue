@@ -14,8 +14,9 @@ export default {
         icon: "dashboard",
         active: true,
         items:[
-          { title:"Tổng quan ngành hàng", to:"/admin/nganh-hang/",},
-          { title:"Chi tiết ngành hàng", to:"/admin/chi-tiet-nganh-hang/",}
+          { title:"Tổng quan ngành hàng", to:"/admin/nganh-hang/"},
+          { title:"Chi tiết ngành hàng", to:"/admin/chi-tiet-nganh-hang/"},
+          { title:"Category", to:"/admin/category/"}
         ],
       },
       {

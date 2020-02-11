@@ -59,7 +59,7 @@
       <v-form v-model="valid">
         <v-card>
           <v-card-title class="headline mb-4" style="background: #0b72ba">
-            <span style="color: white">Thêm mới nghành hàng 
+            <span style="color: white">{{text}} 
             </span>
             <v-spacer></v-spacer>
             <v-btn icon dark @click="Back()">
@@ -121,6 +121,7 @@
         showMenu: false,
         x: 0,
         y: 0,
+        text: 'Thêm mới nghành hàng'
       }
     },
     created () {
@@ -135,14 +136,14 @@
       },
       Add () {
         this.category = {}
+        this.text = 'Thêm mới nghành hàng'
         this.dialog = true
       },
       Back () {
         this.dialog = false
       },
-      editItem (item) {
-        // this.editedIndex = this.desserts.indexOf(item)
-        // this.category = Object.assign({}, item)
+      editItem () {
+        this.text = 'Sửa nghành hàng'
         this.dialog = true
       },
       AddItem () {

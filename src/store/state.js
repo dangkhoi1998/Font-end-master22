@@ -5,6 +5,9 @@ export default {
   snackbar1: false,
   snackbar: false,
   text1: '',
+  coins: [],
+  category_name: [],
+  category_id: '1'
 }
 
 

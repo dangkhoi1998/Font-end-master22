@@ -3,7 +3,7 @@
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>CHI TIẾT NGÀNH HÀNG</span></div>
-        {{select1}} {{select2}} 
+        {{select1}} {{select2}}
         <v-spacer></v-spacer>
         <v-btn  color="#0b72ba" text @click="Add()">
           <v-icon size="40">mdi-plus-thick</v-icon>
@@ -153,7 +153,7 @@
           
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="#0b72ba" @click="AddItem1()"><lable style="color: white">Lưu lại</lable></v-btn>
+          <v-btn color="#0b72ba" @click="AddItem12()"><lable style="color: white">Lưu lại</lable></v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -288,12 +288,34 @@ export default {
         this.dialog = false
       } else {
         this.category.parent_id = this.select.id
-        this.category.parent_id = this.ViewCategory.id
         console.log(this.category)
         Postcategory(this.category)
           .then(reponse => {
             this.listCategory()
             this.dialog = false
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }
+    },
+    AddItem12 () {
+      if(this.editedIndex > -1) {
+        Putcategory(this.category)
+          .then(reponse => {
+            this.listCategory()
+            this.dialog2 = false
+          })
+          .catch(error => {
+            console.log(error)
+          }) 
+        this.dialog = false
+      } else {
+        this.category.parent_id = this.ViewCategory.id
+        console.log(this.category)
+        Postcategory(this.category)
+          .then(reponse => {
+            this.listCategory()
             this.dialog2 = false
           })
           .catch(error => {
@@ -302,7 +324,7 @@ export default {
       }
     },
     Addtwo () {
-      this.category= {}
+      this.category = {}
       this.text1 = 'Thêm mới '
       this.editedIndex = -1
       this.dialog2 = true
