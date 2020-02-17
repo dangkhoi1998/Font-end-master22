@@ -1,10 +1,10 @@
 <template>
   <v-content style="padding-top:90px; background: #f0f4f7">
-    <div id="core-view" style="margin-bottom: 100px;">
-      <v-fade-transition mode="out-in">
-        <router-view />
-      </v-fade-transition>
-    </div>
+      <div id="core-view" style="margin-bottom: 100px;">
+        <v-fade-transition mode="out-in">
+          <router-view />
+        </v-fade-transition>
+      </div>
   </v-content>
 </template>
 
@@ -19,8 +19,7 @@
     }
   }
 </script>
- <style>
-  /* .container .lighten-3 {
-    width: 100%!important;
-  }  */
+<style>
+
 </style>
+ 

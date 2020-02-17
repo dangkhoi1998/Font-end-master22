@@ -1,5 +1,5 @@
 <template>
-  <div class="white">
+  <div class="white" id="slide">
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>TỔNG QUAN NGÀNH HÀNG</span></div>

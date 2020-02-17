@@ -25,20 +25,20 @@ export default {
         icon: "mdi-image"
       },
       {
-        to: "/admin/san-pham",
+        to: "/admin/product",
         text: "Sản phẩm",
         icon: "mdi-asterisk",
         active: true,
         items:[
-          { title:"Tìm kiếm sản phẩm", to:"",},
-          { title:"Danh sách sản phẩm", to:"/admin/san-pham",}
+          { title:"Danh sách sản phẩm", to:"/admin/product/product"},
+          { title:"Thêm mới SP", to:"/admin/product/from-product/"},
         ],
       },
       {
         to: "",
         text: "Settings",
         icon: "settings",
-        active: true,
+        active: false,
         items:[
           { title:"Nguồn hàng", to:"/admin/setting/source",},
           { title:"Nguồn 1", to:"",},

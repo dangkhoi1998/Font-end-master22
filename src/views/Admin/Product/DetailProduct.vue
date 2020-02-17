@@ -1,5 +1,3 @@
 <template>
-  <v-container class="my-0 py-0" >
-    <router-view></router-view>
-  </v-container>
+  <router-view></router-view>
 </template>

@@ -3,67 +3,33 @@
     <app-bar
     :links="links"
     :to="to">
-      <template v-slot:formNganhNghe="{ itemss }">
-        <v-row>
-          <v-col cols="12" sm="2">
-            <v-list-item class="img-repon">
-                <v-img  style="width:80px; height:80px" src="@/assets/logos.png" contain />
-          </v-list-item>
-          </v-col>
-          <v-col cols="12" sm="9" class="mt-5">
-            <span style="
+      <template v-slot:formNganhNghe>
+        <v-toolbar-title
+          style="width: 300px"
+          class="ml-0 pl-3"
+        >
+          <v-btn icon @click.stop="onClick">
+            <v-icon size="30" color="white">apps</v-icon>
+          </v-btn>
+          <span class="hidden-sm-and-down">Admin</span>
+        </v-toolbar-title>
+        <span class="hidden-sm-and-down" style="
             color: #f26522;
             white-space: nowrap;
             text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
             text-align: left;
             font-weight: bold; font-size:28px">Phần mềm hỗ trợ bán hàng hiệu quả hàng đầu tại Việt Nam!</span>
-          </v-col>
-          <v-col cols="12" sm="1" class="mt-7">
-              <v-menu bottom center offset-y transition="slide-y-transition" >
-                <template v-slot:activator="{ attrs, on }">
-                  <v-btn class="toolbar-items " icon to="" v-bind="attrs"
-                    v-on="on"
-                  >
-                    <v-badge
-                      color="error"
-                      overlap
-                    >
-                      <v-icon color="tertiary">
-                        mdi-account
-                      </v-icon>
-                    </v-badge>
-                  </v-btn>
-                </template>
-              
-                <v-card>
-                  <v-list dense v-if="links.levell">
-                    <v-list-item v- v-for="(link, i) in links" :key="i"  style="text-decoration:none" @click="$store.state.authenticated = false" :to="link.levell + $route.params.idEmpl + link.to">
-                      <v-list-item-action >
-                        <v-icon>{{link.icon}}</v-icon>
-                      </v-list-item-action>
-
-                      <v-list-item-title >{{link.text}}</v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                  <v-list dense v-else>
-                    <v-list-item v- v-for="(link, i) in links" :key="i"  style="text-decoration:none" @click="$store.state.authenticated = false" :to="link.to">
-                      <v-list-item-action >
-                        <v-icon>{{link.icon}}</v-icon>
-                      </v-list-item-action>
-
-                      <v-list-item-title >{{link.text}}</v-list-item-title>
-                    </v-list-item>
-                  </v-list>
-                </v-card>
-              </v-menu>
-          </v-col>
-        </v-row>
+        <v-spacer></v-spacer>
+        <v-btn icon>
+          <v-icon color="white">notifications</v-icon>
+        </v-btn>
       </template>
     </app-bar>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex'
 import bar from '../AppBar'
 export default {
   data: () => ({
@@ -87,6 +53,12 @@ export default {
   components: {
     appBar:bar
   },
+  methods: {
+    ...mapMutations('app', ['setDrawer', 'toggleDrawer']),
+    onClick () {
+      this.setDrawer(!this.$store.state.app.drawer)
+    },
+  }
 }
 </script>
 <style>

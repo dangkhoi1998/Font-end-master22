@@ -1,11 +1,11 @@
 <template>
-  <div class="white">
+  <div class=" white" id="slide">
     <div class="list-thu-tuc" style="background-color: #e1e2e1">
       <div class="row-header d-flex">
         <div class="background-triangle-big"> <span>CHI TIẾT NGÀNH HÀNG</span></div>
         {{select1}} {{select2}}
         <v-spacer></v-spacer>
-        <v-btn  color="#0b72ba" text @click="Add()">
+        <v-btn   color="#0b72ba" text @click="Add()">
           <v-icon size="40">mdi-plus-thick</v-icon>
         </v-btn>
       </div>
@@ -229,7 +229,7 @@ export default {
     dialog2: false,
     dialog1: false,
     category: {
-      parent_id: ''
+      parent_id: null
     },
     text1: '',
     ViewCategory: {},

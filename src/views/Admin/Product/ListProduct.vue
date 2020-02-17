@@ -132,7 +132,7 @@
     },
     components: {
       listImg: () => import('./ListProductImage'),
-      product: () => import('./Product')
+      product: () => import('../../../components/Admin/Product/List_product')
     },
     created() {
       this.getItem()

@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import DetailLogin from '../Login/Detail_Login'
 import detailAdmin from '@/views/Detail_Admin'
 import FormDangky from '../Login/Form_dangky'
-import HomeNganhNghe from '@/views/Admin/NganhNghe/HomeNganhNghe'
+import HomeNganhNghe from '@/views/Admin/Category/HomeNganhNghe'
 import Tong_quan_nganh_hang from '../components/Admin/Category/Tong_quan_nganh_hang'
 import ChitietNN from '../components/Admin/Category/Chi_tiet_nganh_hang'
 import QLTK from '../views/Admin/Quanlytaikhoan/Home-QL-tai-khoan'
@@ -13,6 +13,7 @@ import Settings from '../views/Admin/Settings/DetailSetting'
 import Source from '../components/Admin/Settings/Source'
 import test from '../components/Admin/test'
 import Category from '../components/Admin/Category/Home_category'
+import formProduct from '../views/Admin/Product/Form_product'
  
 Vue.use(Router)
 
@@ -57,11 +58,12 @@ export default new Router({
           name: 'QLTK', 
           component: QLTK,
         },
-        { path: 'san-pham',
+        { path: 'product',
           name: 'Product', 
           component: Product,
           children: [
-            { path: '/', name: 'ListProduct', component: ListProduct }
+            { path: 'product', name: 'ListProduct', component: ListProduct },
+            { path: 'from-product', name: 'formProduct', component: formProduct }
           ]
         },
         { path: 'setting',

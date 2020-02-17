@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="slide">
      <!-- <v-container class="my-0 py-0"> -->
       <div class="list-thu-tuc" style="background-color: #e1e2e1">
         <div class="row-header d-flex">

@@ -23,3 +23,20 @@ export function Postsource (item) {
     data: (item),
   })
 }
+
+export function PostImg (item, id) {
+  console.log('test', item)
+  console.log('ssssaaa', id)
+  return request({
+    url: 'http://192.168.1.250:18002/photo/uploads',
+    method: 'post',
+    headers: {
+      'content-type': 'multipart/form-data',
+      'content-type': 'Access-Control-Allow-Origi'
+    },
+    data: {
+      files: `${item}`,
+      id: `${id}`
+    },
+  })
+}

@@ -28,12 +28,14 @@
 </template>
 <script>
 export default {
-  data: () => {
+  data () {
+    return {
+    }
   },
   props: {
     lisProduct: {
       require: true,
-      type: [Array,Object],
+      type: [Array, Object],
       default: null
     },
   }

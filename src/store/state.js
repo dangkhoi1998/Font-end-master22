@@ -6,8 +6,14 @@ export default {
   snackbar: false,
   text1: '',
   coins: [],
+  category: [],
+  category1: [],
+  category2: [],
   category_name: [],
-  category_id: '1'
+  category_id: 0,
+  categoryAdd: 0,
+  categoryparent_id: '',
+  categoryparent_id1: '',
 }
 
 
